@@ -1,0 +1,148 @@
+.homepage {
+    padding: 50px 100px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: $altDarkColor;
+    background-image: url(../img/main_photo3.png);
+    background-size: auto 100vh;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    header {
+        animation-name: titleAppears2;
+        animation-duration: 3s;
+        ul {
+            display: flex;
+            li {
+                margin-right: 20px;
+                list-style: none;
+                transition: 0.2s;
+                &:hover {
+                    transform: translate(0, -3px);
+                    transition: 0.2s;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    color: $lightColor;
+                    &:hover {
+                        color: $altLightColor;
+                        background-color: initial;
+                    }
+                }
+            }
+        }
+    }
+    &__mainTitle {
+        margin: 40px 0 40px -10px;
+        animation-name: titleAppears;
+        animation-duration: 2s;
+        h2 {
+            font-size: $hugeFontSize;
+            line-height: 150px;
+            span {
+                font-weight: 600;
+                color: $primaryColor;
+            }
+        }
+    }
+    &__tagline {
+        animation-name: titleAppears2;
+        animation-duration: 4s;
+        h1 {
+            margin-top: 50px;
+            font-size: $mainFontSize;
+        }
+    }
+}
+
+// Animations
+@keyframes titleAppears {
+    0% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    75% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: -10px;
+        opacity: 1;
+    }
+}
+
+@keyframes titleAppears2 {
+    0% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    75% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+// Tablet version
+@media (max-width: $breakpointTablet) {
+    .wrapper {
+        padding: 50px;
+    }
+    .mainTitle {
+        margin: 40px 0 40px 0;
+        animation-name: titleAppears2;
+        h2 {
+            font-size: $h1FontSize;
+            line-height: $h1FontSize * 1.2;
+            div span:last-child {
+                display: none;
+            }
+        }
+    }
+    .tagline {
+        h1 {
+            font-size: $mobileFontSize;
+        }
+    }
+}
+
+// Small Tablet version
+@media (max-width: $breakpointTabletSmall) {
+    .wrapper {
+        background-size: auto 60vh;
+    }
+}
+
+// Large Mobile version
+@media (max-width: $breakpointMobileLarge) {
+    header {
+        display: none;
+    }
+    .wrapper {
+        padding: 20px;
+        max-width: 100vw;
+        background-size: auto 60vh;
+    }
+    .mainTitle {
+        margin: 0;
+    }
+    .tagline {
+        h1 {
+            margin-top: 20px;
+        }
+    }
+}
+
+// Download Resume Button (Desktop)
+@media (min-width: $breakpointTablet) {
+    .download_resume_btn {
+        bottom: inherit;
+        left: inherit;
+        top: 20px;
+        right: 20px;
+    }
+}

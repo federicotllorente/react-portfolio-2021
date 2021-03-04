@@ -1,0 +1,231 @@
+// Colors
+$primaryColor: #ff803b;
+$primaryColorWOpacity: #ff803b44;
+$darkColor: #212121;
+$darkColorWOpacity: #2121213b;
+$altDarkColor: #000000;
+$midColor: #4d4d4d;
+$lightColor: #adadad;
+$altLightColor: #f1f1f1;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$mainFontSize: 18px;
+$mobileFontSize: 15px;
+$h1FontSize: 60px;
+$h2FontSize: 32px;
+$h3FontSize: 22px;
+$hugeFontSize: 150px;
+$mainFontFamily: "Poppins", sans-serif;
+
+// Breakpoints
+$breakpointMobile: 425px;
+$breakpointMobileLarge: 530px;
+$breakpointTabletSmall: 640px;
+$breakpointTablet: 820px;
+$breakpointTabletLarge: 920px;
+$breakpointDesktop: 1024px;
+
+// Reset default styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: $altDarkColor;
+}
+
+body {
+    background-image: linear-gradient($darkColor, $altDarkColor);
+    color: $lightColor;
+    font-family: $mainFontFamily;
+    font-size: $mainFontSize;
+    font-weight: 500;
+    a {
+        border-radius: 3px;
+        color: $primaryColor;
+        text-decoration: none;
+        transition: 0.2s;
+        &:hover {
+            background-color: $primaryColorWOpacity;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+    }
+    h1 {
+        font-size: $h1FontSize;
+        font-weight: 500;
+    }
+    h2 {
+        font-size: $h2FontSize;
+        font-weight: 500;
+    }
+    h3, h4 {
+        font-size: $h3FontSize;
+        font-weight: 500;
+    }
+}
+
+// SVGs
+.cls-1 {
+    fill: none;
+    stroke: $lightColor;
+    stroke-width: 3px;
+}
+
+// Burger Menu Button
+.burger_menu_btn {
+    padding: 30px 25px;
+    margin: 0;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $altDarkColor;
+    transition: 0.2s;
+    svg {
+        width: 30px;
+        height: 25px;
+        .cls-1 {
+            transition: 0.2s;
+        }
+    }
+    &:hover {
+        padding-right: 50px;
+        background-color: $darkColor;
+        box-shadow: 0 0 20px 10px $darkColorWOpacity;
+        cursor: pointer;
+        svg .cls-1 {
+            stroke: $altLightColor;
+        }
+    }
+}
+
+// Burger Menu
+.burger_menu {
+    padding: 50px 25px;
+    margin: 0;
+    width: 280px;
+    height: 100vh;
+    box-sizing: border-box;
+    position: fixed;
+    right: -320px;
+    z-index: 3;
+    background-color: $darkColor;
+    text-align: right;
+    box-shadow: 10px 0 20px 10px $darkColorWOpacity;
+    transition: 0.3s;
+    h2 {
+        margin: 0 0 20px;
+        color: $midColor;
+    }
+    h3 {
+        margin: 40px 0 20px;
+        color: $midColor;
+    }
+    ul li {
+        margin: 10px 0;
+        list-style: none;
+    }
+        a {
+            color: $lightColor;
+            &.currentPage {
+                color: $altLightColor;
+            }
+            &:hover {
+                background-color: initial;
+                color: $altLightColor;
+            }
+        }
+    p {
+        margin-top: 40px;
+        font-size: 15px;
+        color: $midColor;
+    }
+    &__close_btn {
+        padding: 30px 25px;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 4;
+        transition: 0.2s;
+        &:hover {
+            cursor: pointer;
+            svg .cls-1 {
+                stroke: $altLightColor;
+            }
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            .cls-1 {
+                transition: 0.2s;
+            }
+        }
+    }
+    &--showing {
+        right: 0;
+    }
+}
+
+// Download Resume Button
+.download_resume_btn {
+    padding: 20px 40px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    color: $lightColor;
+    background-color: $darkColor;
+    border-radius: 0;
+    box-shadow: 10px 10px 20px 10px $darkColorWOpacity;
+    text-align: center;
+    &:hover {
+        color: $darkColor;
+        background-color: $primaryColor;
+    }
+}
+
+// Tablet version
+@media (max-width: $breakpointTablet) {
+    body {
+        font-size: $mobileFontSize;
+    }
+    .burger_menu {
+        h2 {
+            padding: 25px;
+            margin: 0 0 10px;
+            h3 {
+                margin: 20px 0 10px;
+            }
+            p {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+// Mobile version
+@media (max-width: $breakpointMobile) {
+    .burger_menu__close_btn {
+        bottom: 15vh;
+    }
+}
+
+@media (max-height: 610px) {
+    .burger_menu {
+        p {
+            display: none;
+        }
+    }
+}
+
+// Components import
+@import '_header.scss';
+@import '_homepage.scss';
+@import '_portfolio.scss';
+@import '_about.scss';
+@import '_contact.scss';

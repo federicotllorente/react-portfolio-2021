@@ -1,0 +1,133 @@
+.wrapper__content {
+    padding: 0 100px 100px;
+    h1 {
+        line-height: $h1FontSize * 1.2;
+        margin-bottom: 50px;
+        span {
+            color: $primaryColor;
+            strong {
+                font-weight: 600;
+            }
+        }
+    }
+    .contact {
+        display: flex;
+        h2 {
+            padding-bottom: 20px;
+        }
+        p {
+            padding-bottom: 20px;
+        }
+        &__text {
+            padding-right: 50px;
+            p {
+                &:nth-last-of-type(2) {
+                    padding-bottom: initial;
+                }
+            }
+            ul li {
+                list-style: none;
+                &:last-of-type {
+                    padding-bottom: 20px;
+                }
+            }
+        }
+        &__form {
+            display: flex;
+            flex-direction: column;
+            input[type="text"], input[type="email"] {
+                padding: 20px 40px;
+                margin: 0 0 20px;
+                width: 400px;
+                box-sizing: border-box;
+                font-family: $mainFontFamily;
+                color: $lightColor;
+                background-color: transparent;
+                border: 2px solid $lightColor;
+                border-radius: 0;
+                -webkit-appearance: none;
+            }
+            textarea {
+                padding: 20px 40px;
+                margin: 0 0 20px;
+                width: 400px;
+                height: 200px;
+                min-width: 400px;
+                min-height: 200px;
+                max-width: 400px;
+                max-height: 200px;
+                box-sizing: border-box;
+                font-family: $mainFontFamily;
+                color: $lightColor;
+                background-color: transparent;
+                border: 2px solid $lightColor;
+                border-radius: 0;
+                -webkit-appearance: none;
+            }
+            input[type="submit"] {
+                padding: 20px 40px;
+                width: fit-content;
+                font-family: $mainFontFamily;
+                color: $altDarkColor;
+                background-color: $lightColor;
+                border: none;
+                border-radius: 0;
+                -webkit-appearance: none;
+                &:hover {
+                    background-color: $altLightColor;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Large Tablet version
+@media (max-width: $breakpointTabletLarge) {
+    .wrapper__content {
+        padding: 0 50px 50px;
+        .contact {
+            &__form {
+                input[type="text"], input[type="email"] {
+                    width: 40vw;
+                }
+                textarea {
+                    width: 40vw;
+                    min-width: 40vw;
+                    max-width: 40vw;
+                }
+            }
+        }
+    }
+}
+
+// Small Tablet version
+@media (max-width: $breakpointTabletSmall) {
+    .wrapper__content {
+        .contact {
+            flex-direction: column;
+            &__form {
+                padding-top: 30px;
+                input[type="text"], input[type="email"] {
+                    width: 70vw;
+                }
+                textarea {
+                    width: 70vw;
+                    min-width: 70vw;
+                    max-width: 70vw;
+                }
+            }
+        }
+    }
+}
+
+// Mobile version
+@media (max-width: $breakpointMobile) {
+    .wrapper__content {
+        padding: 0 15vw 15vw;
+        h1 {
+            font-size: $h2FontSize;
+            line-height: $h2FontSize * 1.2;
+        }
+    }
+}

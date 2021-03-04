@@ -1,0 +1,145 @@
+.wrapper__content {
+    padding: 0 100px 100px;
+    h1 {
+        margin-left: -10px;
+        font-size: $hugeFontSize;
+    }
+    > p {
+        margin-bottom: 100px;
+    }
+}
+
+.project {
+    margin-bottom: 50px;
+    display: flex;
+    &__image {
+        width: 400px;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+        a {
+            img {
+                width: 400px;
+                height: auto;
+                position: absolute;
+                transition: 0.2s;
+                top: 0;
+                left: 0;
+                &:hover {
+                    width: 500px;
+                    top: -50px;
+                    left: -50px;
+                }
+            }
+            &:hover {
+                background-color: initial;
+            }
+        }
+    }
+    &__content {
+        padding: 0 0 0 50px;
+        h2 {
+            font-size: $h1FontSize;
+            a {
+                color: $lightColor;
+                &:hover {
+                    background-color: initial;
+                    color: $altLightColor;
+                }
+            }
+        }
+        h3 {
+            color: $midColor;
+        }
+        ul li {
+            list-style: none;
+        }
+        &__technologies {
+            padding: 20px 0 0;
+        }
+        &__ux {
+            padding: 20px 0 20px;
+        }
+    }
+}
+
+// Tablet version
+@media (max-width: $breakpointTablet) {
+    .wrapper__content {
+        padding: 0 50px 50px;
+        h1 {
+            margin-left: 0;
+            font-size: $h1FontSize;
+        }
+        > p {
+            margin-bottom: 50px;
+        }
+    }
+    .project {
+        &__image {
+            width: 280px;
+            height: 350px;
+            a {
+                img {
+                    width: 280px;
+                    &:hover {
+                        width: 380px;
+                        top: -50px;
+                        left: -50px;
+                    }
+                }
+            }
+        }
+        &__content {
+            h2 {
+                font-size: $h2FontSize;
+            }
+            &__technologies {
+                padding: 10px 0 0;
+            }
+            &__ux {
+                padding: 10px 0 10px;
+            }
+        }
+    }
+}
+
+// Small Tablet version
+@media (max-width: $breakpointTabletSmall) {
+    .project {
+        flex-direction: column;
+        &__content {
+            padding: 20px 0 0;
+        }
+    }
+}
+
+// Mobile version
+@media (max-width: $breakpointMobile) {
+    .wrapper__content {
+        padding: 0 15vw 15vw;
+        h1 {
+            font-size: $h1FontSize * 0.8;
+        }
+    }
+    .project {
+        flex-direction: column;
+        &__image {
+            width: 70vw;
+            height: 87.5vw;
+            a {
+                img {
+                    width: 70vw;
+                    &:hover {
+                        width: 80vw;
+                        top: -5vw;
+                        left: -5vw;
+                    }
+                }
+            }
+        }
+        &__content {
+            padding: 20px 0 0;
+        }
+    }
+}
