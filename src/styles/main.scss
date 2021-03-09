@@ -15,7 +15,7 @@ $mobileFontSize: 15px;
 $h1FontSize: 60px;
 $h2FontSize: 32px;
 $h3FontSize: 22px;
-$hugeFontSize: 150px;
+$hugeFontSize: 100px;
 $mainFontFamily: "Poppins", sans-serif;
 
 // Breakpoints
@@ -84,6 +84,7 @@ body {
     right: 0;
     z-index: 2;
     background-color: $altDarkColor;
+    animation: showBurgerMenuBTN ease 1s;
     transition: 0.2s;
     svg {
         width: 30px;
@@ -111,11 +112,12 @@ body {
     height: 100vh;
     box-sizing: border-box;
     position: fixed;
-    right: -320px;
+    right: 0;
     z-index: 3;
     background-color: $darkColor;
     text-align: right;
     box-shadow: 10px 0 20px 10px $darkColorWOpacity;
+    animation: showBurgerMenu ease 1s;
     transition: 0.3s;
     h2 {
         margin: 0 0 20px;
@@ -166,9 +168,6 @@ body {
             }
         }
     }
-    &--showing {
-        right: 0;
-    }
 }
 
 // Download Resume Button
@@ -188,6 +187,43 @@ body {
         background-color: $primaryColor;
     }
 }
+
+// Animations
+@keyframes showBurgerMenuBTN {
+    0% {
+        right: -75px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+// @keyframes hideBurgerMenuBTN {
+//     0% {
+//         right: 0;
+//     }
+//     100% {
+//         right: -75px;
+//     }
+// }
+
+@keyframes showBurgerMenu {
+    0% {
+        right: -280px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+// @keyframes hideBurgerMenu {
+//     0% {
+//         right: 0;
+//     }
+//     100% {
+//         right: -280px;
+//     }
+// }
 
 // Tablet version
 @media (max-width: $breakpointTablet) {
