@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header(props) {
+    let location = useLocation();
+    const headerItems = [
+        { id: 1, name: 'Portfolio', path: '/portfolio' },
+        { id: 2, name: 'About me', path: '/about' },
+        { id: 3, name: 'Contact', path: '/contact' }
+    ];
     return (
         <header>
             <div className="logo">
@@ -13,9 +19,17 @@ function Header(props) {
                 <h1>Front-end<br />Developer</h1>
             </div>
             <ul>
-                <li><Link to="/portfolio">Portfolio</Link></li>
-                <li><Link to="/about">About me</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                {headerItems.map(el => {
+                    return (
+                        <li key={el.id}>
+                            {(location.pathname === el.path) ? (
+                                <Link className="currentPage" to={el.path}>{el.name}</Link>
+                            ) : (
+                                    <Link to={el.path}>{el.name}</Link>
+                                )}
+                        </li>
+                    );
+                })}
             </ul>
         </header>
     );

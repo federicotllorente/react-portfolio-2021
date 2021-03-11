@@ -142,13 +142,3 @@
         }
     }
 }
-
-// Download Resume Button (Desktop)
-@media (min-width: $breakpointTablet) {
-    .download_resume_btn {
-        bottom: inherit;
-        left: inherit;
-        top: 20px;
-        right: 20px;
-    }
-}

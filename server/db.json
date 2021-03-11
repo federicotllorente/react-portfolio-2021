@@ -1,0 +1,133 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "pathname": "flashcards-app",
+            "name": "Flashcards App",
+            "type": "Web App",
+            "year": 2021,
+            "technologies": [
+                {
+                    "id": 1,
+                    "name": "React & React Router"
+                },
+                {
+                    "id": 2,
+                    "name": "NodeJS & Express"
+                },
+                {
+                    "id": 3,
+                    "name": "MongoDB"
+                },
+                {
+                    "id": 4,
+                    "name": "Sass / CSS"
+                }
+            ],
+            "ux": "Adobe XD",
+            "url": "https://flashcards.federicotllorente.work/",
+            "gitHub": "https://www.github.com/federicotllorente/flashcards-app/",
+            "image": "https://picsum.photos/400/500"
+        },
+        {
+            "id": 2,
+            "pathname": "all-about-food",
+            "name": "All about food",
+            "type": "Web App",
+            "year": 2021,
+            "technologies": [
+                {
+                    "id": 1,
+                    "name": "React & React Router"
+                },
+                {
+                    "id": 2,
+                    "name": "JavaScript"
+                },
+                {
+                    "id": 3,
+                    "name": "Sass / CSS"
+                }
+            ],
+            "ux": "Adobe XD",
+            "url": "https://allaboutfood.federicotllorente.work/",
+            "gitHub": "https://www.github.com/federicotllorente/all-about-food/",
+            "image": "https://picsum.photos/400/500"
+        },
+        {
+            "id": 3,
+            "pathname": "platzi-badges",
+            "name": "Platzi Badges",
+            "type": "Web App",
+            "year": 2021,
+            "technologies": [
+                {
+                    "id": 1,
+                    "name": "React & React Router"
+                },
+                {
+                    "id": 2,
+                    "name": "JavaScript"
+                },
+                {
+                    "id": 3,
+                    "name": "Sass / CSS"
+                }
+            ],
+            "ux": "Adobe XD",
+            "url": "https://badges.federicotllorente.work/",
+            "gitHub": "https://www.github.com/federicotllorente/platzi-badges/",
+            "image": "https://picsum.photos/400/500"
+        },
+        {
+            "id": 4,
+            "pathname": "app-pokemon-api",
+            "name": "Pokédex App",
+            "type": "Single Page Application",
+            "year": 2021,
+            "technologies": [
+                {
+                    "id": 1,
+                    "name": "JavaScript (Vanilla)"
+                },
+                {
+                    "id": 2,
+                    "name": "Webpack & Babel"
+                },
+                {
+                    "id": 3,
+                    "name": "Sass / CSS"
+                }
+            ],
+            "ux": "Adobe XD",
+            "url": "https://pokedex.federicotllorente.work/",
+            "gitHub": "https://www.github.com/federicotllorente/app-pokemon-api/",
+            "image": "https://picsum.photos/400/500"
+        },
+        {
+            "id": 5,
+            "pathname": "react-portfolio-2021",
+            "name": "My 2021 Portfolio",
+            "type": "Website (this Portfolio)",
+            "year": 2021,
+            "technologies": [
+                {
+                    "id": 1,
+                    "name": "React & React Router"
+                },
+                {
+                    "id": 2,
+                    "name": "JavaScript"
+                },
+                {
+                    "id": 3,
+                    "name": "Sass / CSS"
+                }
+            ],
+            "ux": "Adobe XD",
+            "url": "https://www.federicotllorente.work/",
+            "gitHub": "https://www.github.com/federicotllorente/react-portfolio-2021/",
+            "image": "https://picsum.photos/400/500"
+        }
+    ]
+}

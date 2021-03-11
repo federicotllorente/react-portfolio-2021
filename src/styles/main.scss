@@ -131,16 +131,16 @@ body {
         margin: 10px 0;
         list-style: none;
     }
-        a {
-            color: $lightColor;
-            &.currentPage {
-                color: $altLightColor;
-            }
-            &:hover {
-                background-color: initial;
-                color: $altLightColor;
-            }
+    a {
+        color: $lightColor;
+        &.currentPage {
+            color: $altLightColor;
         }
+        &:hover {
+            background-color: initial;
+            color: $altLightColor;
+        }
+    }
     p {
         margin-top: 40px;
         font-size: 15px;
@@ -174,8 +174,8 @@ body {
 .download_resume_btn {
     padding: 20px 40px;
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    top: 20px;
+    right: 20px;
     z-index: 2;
     color: $lightColor;
     background-color: $darkColor;
@@ -224,6 +224,16 @@ body {
 //         right: -280px;
 //     }
 // }
+
+// Large Tablet version
+@media (max-width: $breakpointTabletLarge) {
+    .download_resume_btn {
+        top: inherit;
+        right: inherit;
+        bottom: 20px;
+        left: 20px;
+    }
+}
 
 // Tablet version
 @media (max-width: $breakpointTablet) {
