@@ -1001,4 +1001,60 @@ header ul li a:hover {
     line-height: 38.4px;
   }
 }
+
+.loader {
+  width: 2rem;
+  height: 2rem;
+  border: 0.3rem solid #cfcfcf;
+  border-radius: 50%;
+  border-left-color: #212121;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 100px auto 0;
+  -webkit-animation: loader-animation 1s ease infinite;
+          animation: loader-animation 1s ease infinite;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@-webkit-keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.error {
+  padding: 0 20px 50px;
+  text-align: center;
+}
+
+.error h2 {
+  padding-bottom: 20px;
+}
+
+.error p {
+  padding-bottom: 20px;
+}
+
+@media (max-width: 425px) {
+  .error {
+    padding: 0 20px 200px;
+  }
+}
 /*# sourceMappingURL=main.css.map */

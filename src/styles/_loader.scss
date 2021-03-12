@@ -1,0 +1,20 @@
+.loader {
+    width: 2rem;
+    height: 2rem;
+    border: 0.3rem solid rgb(207, 207, 207);
+    border-radius: 50%;
+    border-left-color: $darkColor;
+    box-sizing: border-box;
+    margin: 100px auto 0;
+    animation: loader-animation 1s ease infinite;
+    transition: 0.3s;
+}
+
+@keyframes loader-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

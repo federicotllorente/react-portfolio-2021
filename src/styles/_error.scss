@@ -1,0 +1,16 @@
+.error {
+    padding: 0 20px 50px;
+    text-align: center;
+    h2 {
+        padding-bottom: 20px;
+    }
+    p {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: $breakpointMobile) {
+    .error {
+        padding: 0 20px 200px;
+    }
+}
