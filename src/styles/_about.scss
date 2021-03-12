@@ -1,4 +1,4 @@
-.wrapper__content {
+.about_wrapper {
     padding: 0 100px 100px;
     h1 {
         line-height: $h1FontSize * 1.2;
@@ -35,8 +35,8 @@
 
 // Large Tablet version
 @media (max-width: $breakpointTabletLarge) {
-    .wrapper__content {
-        padding: 0 50px 50px;
+    .about_wrapper {
+        padding: 0 50px 100px;
         .about {
             &__introduction {
                 &__image {
@@ -54,8 +54,8 @@
 
 // Mobile version
 @media (max-width: $breakpointMobile) {
-    .wrapper__content {
-        padding: 0 15vw 15vw;
+    .about_wrapper {
+        padding: 0 15vw 30vw;
         h1 {
             font-size: $h2FontSize;
             line-height: $h2FontSize * 1.2;

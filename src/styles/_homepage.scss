@@ -112,13 +112,6 @@
     }
 }
 
-// Small Tablet version
-@media (max-width: $breakpointTabletSmall) {
-    .homepage {
-        background-size: auto 60vh;
-    }
-}
-
 // Large Mobile version
 @media (max-width: $breakpointMobileLarge) {
     .homepage {

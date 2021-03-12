@@ -6,7 +6,7 @@ import bioPhoto from '../img/bio_photo.png';
 class About extends Component {
     render() {
         return (
-            <div className="wrapper__content">
+            <div className="about_wrapper">
                 <h1><span>I create</span> attractive, functional and professional <span>websites</span></h1>
                 <div className="about">
                     <div className="about__introduction">

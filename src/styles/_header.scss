@@ -72,16 +72,16 @@ header {
 @media (max-width: $breakpointMobile) {
     header {
         padding: 15vw;
-    }
         .logo {
             flex-direction: column;
             align-items: flex-start;
-        }
             h2 {
                 margin-right: 0;
                 margin-bottom: 20px;
             }
+        }
         ul {
             display: none;
         }
+    }
 }

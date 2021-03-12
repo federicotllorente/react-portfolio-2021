@@ -1,4 +1,4 @@
-.wrapper__content {
+.contact_wrapper {
     padding: 0 100px 100px;
     h1 {
         line-height: $h1FontSize * 1.2;
@@ -84,7 +84,7 @@
 
 // Large Tablet version
 @media (max-width: $breakpointTabletLarge) {
-    .wrapper__content {
+    .contact_wrapper {
         padding: 0 50px 50px;
         .contact {
             &__form {
@@ -103,7 +103,7 @@
 
 // Small Tablet version
 @media (max-width: $breakpointTabletSmall) {
-    .wrapper__content {
+    .contact_wrapper {
         .contact {
             flex-direction: column;
             &__form {
@@ -123,7 +123,7 @@
 
 // Mobile version
 @media (max-width: $breakpointMobile) {
-    .wrapper__content {
+    .contact_wrapper {
         padding: 0 15vw 15vw;
         h1 {
             font-size: $h2FontSize;

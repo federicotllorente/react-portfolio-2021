@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import BurgerMenuButton from './BurgerMenuButton';
 import BurgerMenuCloseButton from './BurgerMenuCloseButton';
-
-function DownloadResumeButton() {
-    return (<Link className="download_resume_btn" to="/" id="download_resume_btn">Download my Resume/CV</Link>);
-}
+import DownloadResumeButton from './DownloadResumeButton';
+import useBurgerMenu from '../hooks/useBurgerMenu';
 
 function BurgerMenu() {
-    const [showingMenu, setShowingMenu] = useState(false);
-    const handleOpenMenu = () => {
-        setShowingMenu(true);
-    }
-    const handleCloseMenu = () => {
-        setShowingMenu(false);
-    }
+    const { handleOpenMenu, handleCloseMenu, showingMenu } = useBurgerMenu();
     if (!showingMenu) {
         return (
             <React.Fragment>

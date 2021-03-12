@@ -1,4 +1,4 @@
-.wrapper__content {
+.portfolio_wrapper {
     padding: 0 100px 100px;
     h1 {
         margin-left: -10px;
@@ -20,7 +20,7 @@
         a {
             img {
                 width: 400px;
-                height: auto;
+                height: 500px;
                 position: absolute;
                 transition: 0.2s;
                 top: 0;
@@ -37,9 +37,12 @@
         }
     }
     &__content {
+        width: 40%;
         padding: 0 0 0 50px;
         h2 {
+            padding-bottom: 20px;
             font-size: $h1FontSize;
+            line-height: $h1FontSize;
             a {
                 color: $lightColor;
                 &:hover {
@@ -63,9 +66,41 @@
     }
 }
 
+// Desktop version
+@media (max-width: $breakpointDesktop) {
+    .project {
+        &__image {
+            width: 320px;
+            height: 400px;
+            a {
+                img {
+                    width: 320px;
+                    &:hover {
+                        width: 420px;
+                        top: -50px;
+                        left: -50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Large Tablet version
+@media (max-width: $breakpointTabletLarge) {
+    .project {
+        &__content {
+            h2 {
+                font-size: $h2FontSize;
+                line-height: $h2FontSize;
+            }
+        }
+    }
+}
+
 // Tablet version
 @media (max-width: $breakpointTablet) {
-    .wrapper__content {
+    .portfolio_wrapper {
         padding: 0 50px 50px;
         h1 {
             margin-left: 0;
@@ -91,9 +126,6 @@
             }
         }
         &__content {
-            h2 {
-                font-size: $h2FontSize;
-            }
             &__technologies {
                 padding: 10px 0 0;
             }
@@ -109,6 +141,7 @@
     .project {
         flex-direction: column;
         &__content {
+            width: initial;
             padding: 20px 0 0;
         }
     }
@@ -116,7 +149,7 @@
 
 // Mobile version
 @media (max-width: $breakpointMobile) {
-    .wrapper__content {
+    .portfolio_wrapper {
         padding: 0 15vw 15vw;
         h1 {
             font-size: $h1FontSize * 0.8;
