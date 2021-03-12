@@ -58,37 +58,6 @@
     }
 }
 
-// Animations
-@keyframes titleAppears {
-    0% {
-        margin-left: -110px;
-        opacity: 0;
-    }
-    75% {
-        margin-left: -110px;
-        opacity: 0;
-    }
-    100% {
-        margin-left: -10px;
-        opacity: 1;
-    }
-}
-
-@keyframes titleAppears2 {
-    0% {
-        margin-left: -110px;
-        opacity: 0;
-    }
-    75% {
-        margin-left: -110px;
-        opacity: 0;
-    }
-    100% {
-        margin-left: 0;
-        opacity: 1;
-    }
-}
-
 // Tablet version
 @media (max-width: $breakpointTablet) {
     .homepage {

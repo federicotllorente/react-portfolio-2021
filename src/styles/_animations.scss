@@ -1,0 +1,67 @@
+// Burger menu animations
+@keyframes showBurgerMenuBTN {
+    0% {
+        right: -75px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+// @keyframes hideBurgerMenuBTN {
+//     0% {
+//         right: 0;
+//     }
+//     100% {
+//         right: -75px;
+//     }
+// }
+
+@keyframes showBurgerMenu {
+    0% {
+        right: -280px;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+// @keyframes hideBurgerMenu {
+//     0% {
+//         right: 0;
+//     }
+//     100% {
+//         right: -280px;
+//     }
+// }
+
+// Homepage animations
+@keyframes titleAppears {
+    0% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    75% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: -10px;
+        opacity: 1;
+    }
+}
+
+@keyframes titleAppears2 {
+    0% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    75% {
+        margin-left: -110px;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0;
+        opacity: 1;
+    }
+}

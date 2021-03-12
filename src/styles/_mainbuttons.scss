@@ -1,0 +1,58 @@
+// Burger Menu Button
+.burger_menu_btn {
+    padding: 30px 25px;
+    margin: 0;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $altDarkColor;
+    animation: showBurgerMenuBTN ease 1s;
+    transition: 0.2s;
+    svg {
+        width: 30px;
+        height: 25px;
+        .cls-1 {
+            transition: 0.2s;
+        }
+    }
+    &:hover {
+        padding-right: 50px;
+        background-color: $darkColor;
+        box-shadow: 0 0 20px 10px $darkColorWOpacity;
+        cursor: pointer;
+        svg .cls-1 {
+            stroke: $altLightColor;
+        }
+    }
+}
+
+// Download Resume Button
+.download_resume_btn {
+    padding: 20px 40px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    color: $lightColor;
+    background-color: $darkColor;
+    border-radius: 0;
+    box-shadow: 10px 10px 20px 10px $darkColorWOpacity;
+    text-align: center;
+    white-space: pre-wrap;
+    &:hover {
+        color: $darkColor;
+        background-color: $primaryColor;
+    }
+}
+
+// Large Tablet version
+@media (max-width: $breakpointTabletLarge) {
+    .download_resume_btn {
+        top: inherit;
+        right: inherit;
+        bottom: 20px;
+        left: 20px;
+    }
+}

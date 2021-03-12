@@ -1,0 +1,115 @@
+// SVGs
+.cls-1 {
+    fill: none;
+    stroke: $lightColor;
+    stroke-width: 3px;
+}
+
+// Burger menu
+.burger_menu {
+    padding: 50px 25px;
+    margin: 0;
+    width: 280px;
+    height: 100vh;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    z-index: 3;
+    background-color: $darkColor;
+    text-align: right;
+    box-shadow: 10px 0 20px 10px $darkColorWOpacity;
+    animation: showBurgerMenu ease 1s;
+    transition: 0.3s;
+    h2 {
+        margin: 0 0 20px;
+        color: $midColor;
+    }
+    h3 {
+        margin: 40px 0 20px;
+        color: $midColor;
+    }
+    ul li {
+        margin: 10px 0;
+        list-style: none;
+    }
+    a {
+        color: $lightColor;
+        &.currentPage {
+            color: $altLightColor;
+        }
+        &:hover {
+            background-color: initial;
+            color: $altLightColor;
+        }
+    }
+    p {
+        margin-top: 40px;
+        font-size: 15px;
+        color: $midColor;
+    }
+    &__close_btn {
+        padding: 30px 25px;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 4;
+        transition: 0.2s;
+        &:hover {
+            cursor: pointer;
+            svg .cls-1 {
+                stroke: $altLightColor;
+            }
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            .cls-1 {
+                transition: 0.2s;
+            }
+        }
+    }
+}
+
+// Tablet version
+@media (max-width: $breakpointTablet) {
+    .burger_menu {
+        padding: 25px;
+        h2 {
+            margin: 0 0 10px;
+        }
+        h3 {
+            margin: 20px 0 10px;
+        }
+        p {
+            margin-top: 20px;
+        }
+    }
+}
+
+// Mobile version
+@media (max-width: $breakpointMobile) {
+    .burger_menu {
+        p {
+            display: none;
+        }
+        &__close_btn {
+            bottom: 15vh;
+        }
+    }
+    @media (min-height: 620px) {
+        .burger_menu {
+            p {
+                display: initial;
+            }
+        }
+    }
+}
+
+@media (max-height: 520px) {
+    .burger_menu {
+        p {
+            display: none;
+        }
+    }
+}

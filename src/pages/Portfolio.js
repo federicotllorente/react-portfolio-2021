@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import Project from '../components/Project';
-const api = 'http://localhost:3001/projects/';
 
-// Getting the data
-async function getData(api_url) {
-    const result = await fetch(api_url);
-    const data = await result.json();
-    return data;
-}
+import api from '../api';
+const api_url = 'http://localhost:3001/projects/';
 
 function Portfolio(props) {
     const [loading, setLoading] = useState(false);
@@ -17,7 +12,7 @@ function Portfolio(props) {
 
     const fetchData = async (api_url) => {
         setLoading(true);
-        const response = await getData(api_url);
+        const response = await api(api_url);
         try {
             setLoading(false);
             setData(response);
@@ -28,9 +23,22 @@ function Portfolio(props) {
     };
 
     useEffect(() => {
-        fetchData(api)
+        fetchData(api_url)
     }, []);
 
+    // If the data is loading
+    if (loading) {
+        return (
+            <div className="loader"></div>
+        );
+    }
+    // If there's an error
+    if (error != null) {
+        return (
+            <div className="error_modal">{error}</div>
+        );
+    }
+    // If it's successfully fetched the data
     return (
         <div className="portfolio_wrapper">
             <h1>Portfolio</h1>
