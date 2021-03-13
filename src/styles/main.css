@@ -315,7 +315,7 @@ body h3, body h4 {
   stroke: #f1f1f1;
 }
 
-.download_resume_btn {
+.download_resume_btn, .portfolio_wrapper .portfolio__see_more_button {
   padding: 20px 40px;
   position: fixed;
   top: 20px;
@@ -328,15 +328,18 @@ body h3, body h4 {
           box-shadow: 10px 10px 20px 10px #2121213b;
   text-align: center;
   white-space: pre-wrap;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
-.download_resume_btn:hover {
+.download_resume_btn:hover, .portfolio_wrapper .portfolio__see_more_button:hover {
   color: #212121;
   background-color: #ff803b;
+  cursor: pointer;
 }
 
 @media (max-width: 920px) {
-  .download_resume_btn {
+  .download_resume_btn, .portfolio_wrapper .portfolio__see_more_button {
     top: inherit;
     right: inherit;
     bottom: 20px;
@@ -605,6 +608,14 @@ header ul li a:hover {
   margin-bottom: 100px;
 }
 
+.portfolio_wrapper .portfolio__see_more_button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: initial;
+  z-index: initial;
+}
+
 .project {
   margin-bottom: 50px;
   display: -webkit-box;
@@ -682,6 +693,7 @@ header ul li a:hover {
   }
   .project__image a img {
     width: 320px;
+    height: auto;
   }
   .project__image a img:hover {
     width: 420px;
@@ -691,6 +703,9 @@ header ul li a:hover {
 }
 
 @media (max-width: 920px) {
+  .portfolio_wrapper {
+    padding: 0 100px 200px;
+  }
   .project__content h2 {
     font-size: 32px;
     line-height: 32px;
@@ -699,7 +714,7 @@ header ul li a:hover {
 
 @media (max-width: 820px) {
   .portfolio_wrapper {
-    padding: 0 50px 50px;
+    padding: 0 50px 150px;
   }
   .portfolio_wrapper h1 {
     margin-left: 0;
@@ -714,6 +729,7 @@ header ul li a:hover {
   }
   .project__image a img {
     width: 280px;
+    height: auto;
   }
   .project__image a img:hover {
     width: 380px;
@@ -743,7 +759,7 @@ header ul li a:hover {
 
 @media (max-width: 425px) {
   .portfolio_wrapper {
-    padding: 0 15vw 15vw;
+    padding: 0 15vw 50vw;
   }
   .portfolio_wrapper h1 {
     font-size: 48px;
@@ -1002,6 +1018,15 @@ header ul li a:hover {
   }
 }
 
+.not_found_wrapper {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.not_found_wrapper p {
+  padding-bottom: 10px;
+}
+
 .loader {
   width: 2rem;
   height: 2rem;
@@ -1056,5 +1081,54 @@ header ul li a:hover {
   .error {
     padding: 0 20px 200px;
   }
+}
+
+.no_more_data_modal {
+  width: 280px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 5;
+  top: 20px;
+  right: 20px;
+  background-color: #ff803b;
+  color: #212121;
+  -webkit-box-shadow: 10px 0 20px 10px #2121213b;
+          box-shadow: 10px 0 20px 10px #2121213b;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-animation: showBurgerMenu ease 1s;
+          animation: showBurgerMenu ease 1s;
+}
+
+.no_more_data_modal__close_btn {
+  margin-right: 20px;
+}
+
+.no_more_data_modal__close_btn svg {
+  width: 10px;
+  height: 10px;
+}
+
+.no_more_data_modal__close_btn svg .cls-1 {
+  fill: none;
+  stroke: #212121;
+  stroke-width: 5px;
+}
+
+.no_more_data_modal__close_btn:hover {
+  cursor: pointer;
+}
+
+.no_more_data_modal__close_btn:hover svg .cls-1 {
+  stroke: #000000;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,37 @@
+.no_more_data_modal {
+    width: 280px;
+    height: 100px;
+    display: flex;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    top: 20px;
+    right: 20px;
+    background-color: $primaryColor;
+    color: $darkColor;
+    box-shadow: 10px 0 20px 10px $darkColorWOpacity;
+    transition: 0.2s;
+    animation: showBurgerMenu ease 1s;
+    &__close_btn {
+        margin-right: 20px;
+        svg {
+            width: 10px;
+            height: 10px;
+            .cls-1 {
+                fill: none;
+                stroke: $darkColor;
+                stroke-width: 5px;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            svg {
+                .cls-1 {
+                    stroke: $altDarkColor;
+                }
+            }
+        }
+    }
+}

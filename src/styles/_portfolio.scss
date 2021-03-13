@@ -7,6 +7,12 @@
     > p {
         margin-bottom: 100px;
     }
+    .portfolio__see_more_button {
+        @extend .download_resume_btn;
+        width: max-content;
+        position: initial;
+        z-index: initial;
+    }
 }
 
 .project {
@@ -75,6 +81,7 @@
             a {
                 img {
                     width: 320px;
+                    height: auto;
                     &:hover {
                         width: 420px;
                         top: -50px;
@@ -88,6 +95,9 @@
 
 // Large Tablet version
 @media (max-width: $breakpointTabletLarge) {
+    .portfolio_wrapper {
+        padding: 0 100px 200px;
+    }
     .project {
         &__content {
             h2 {
@@ -101,7 +111,7 @@
 // Tablet version
 @media (max-width: $breakpointTablet) {
     .portfolio_wrapper {
-        padding: 0 50px 50px;
+        padding: 0 50px 150px;
         h1 {
             margin-left: 0;
             font-size: $h1FontSize;
@@ -117,6 +127,7 @@
             a {
                 img {
                     width: 280px;
+                    height: auto;
                     &:hover {
                         width: 380px;
                         top: -50px;
@@ -150,7 +161,7 @@
 // Mobile version
 @media (max-width: $breakpointMobile) {
     .portfolio_wrapper {
-        padding: 0 15vw 15vw;
+        padding: 0 15vw 50vw;
         h1 {
             font-size: $h1FontSize * 0.8;
         }

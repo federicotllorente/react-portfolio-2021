@@ -5,13 +5,13 @@ function Project(props) {
     return (
         <div className="project" key={props.data.id}>
             <div className="project__image">
-                <Link to={`projects/${props.data.pathname}`}>
+                <Link to={`portfolio/${props.data.pathname}`}>
                     <img src={props.data.image} alt="Project Thumbnail" />
                 </Link>
             </div>
             <div className="project__content">
                 <h2>
-                    <Link to={`projects/${props.data.pathname}`}>
+                    <Link to={`portfolio/${props.data.pathname}`}>
                         {props.data.name}
                     </Link>
                 </h2>
@@ -34,9 +34,9 @@ function Project(props) {
                         <li>{props.data.ux}</li>
                     </ul>
                 </div>
-                <Link to={props.data.url}>See entire project</Link>
+                <a href={props.data.url}>See entire project</a>
                 <br />
-                <Link to={props.data.gitHub}>See code in GitHub</Link>
+                <a href={props.data.gitHub}>See code in GitHub</a>
             </div>
         </div>
     );
