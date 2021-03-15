@@ -12,9 +12,9 @@ class Contact extends Component {
                         <p>Feel free to contact me and tell me about your project or company. I would like to hear from you!</p>
                         <p>You can email me at <a href="mailto:hello@federicotllorente.work">hello@federicotllorente.work</a>, or simply complete the contact form. And id you wish, you can reach me out on my Social media as well:</p>
                         <ul>
-                            <li>–<a href="https://www.instagram.com/federicotllorente/">Instagram</a></li>
-                            <li>–<a href="https://www.linkedin.com/in/federicotllorente/">LinkedIn</a></li>
-                            <li>–<a href="https://www.behance.net/federicollorente">Behance</a></li>
+                            <li>–<a target="_blank" rel="noreferrer" href="https://www.instagram.com/federicotllorente/">Instagram</a></li>
+                            <li>–<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federicotllorente/">LinkedIn</a></li>
+                            <li>–<a target="_blank" rel="noreferrer" href="https://www.behance.net/federicollorente">Behance</a></li>
                         </ul>
                         <p>Let’s make something special!</p>
                     </div>

@@ -72,6 +72,7 @@
                 background-color: $lightColor;
                 border: none;
                 border-radius: 0;
+                transition: 0.2s;
                 -webkit-appearance: none;
                 &:hover {
                     background-color: $altLightColor;
@@ -85,7 +86,7 @@
 // Large Tablet version
 @media (max-width: $breakpointTabletLarge) {
     .contact_wrapper {
-        padding: 0 50px 50px;
+        padding: 0 50px 100px;
         .contact {
             &__form {
                 input[type="text"], input[type="email"] {
@@ -104,6 +105,7 @@
 // Small Tablet version
 @media (max-width: $breakpointTabletSmall) {
     .contact_wrapper {
+        padding: 0 50px 150px;
         .contact {
             flex-direction: column;
             &__form {
@@ -124,7 +126,7 @@
 // Mobile version
 @media (max-width: $breakpointMobile) {
     .contact_wrapper {
-        padding: 0 15vw 15vw;
+        padding: 0 15vw 50vw;
         h1 {
             font-size: $h2FontSize;
             line-height: $h2FontSize * 1.2;

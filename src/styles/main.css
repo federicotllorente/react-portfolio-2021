@@ -1078,6 +1078,8 @@ header ul li a:hover {
   background-color: #adadad;
   border: none;
   border-radius: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   -webkit-appearance: none;
 }
 
@@ -1088,7 +1090,7 @@ header ul li a:hover {
 
 @media (max-width: 920px) {
   .contact_wrapper {
-    padding: 0 50px 50px;
+    padding: 0 50px 100px;
   }
   .contact_wrapper .contact__form input[type="text"], .contact_wrapper .contact__form input[type="email"] {
     width: 40vw;
@@ -1101,6 +1103,9 @@ header ul li a:hover {
 }
 
 @media (max-width: 640px) {
+  .contact_wrapper {
+    padding: 0 50px 150px;
+  }
   .contact_wrapper .contact {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1122,7 +1127,7 @@ header ul li a:hover {
 
 @media (max-width: 425px) {
   .contact_wrapper {
-    padding: 0 15vw 15vw;
+    padding: 0 15vw 50vw;
   }
   .contact_wrapper h1 {
     font-size: 32px;
