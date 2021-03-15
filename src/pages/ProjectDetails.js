@@ -1,32 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-import api from '../api';
+import useFetchProjData from '../hooks/useFetchProjData';
 import NotFound from './NotFound';
+
 const api_url = 'http://localhost:3001/projects';
 
-function ProjectDetails(props) {
-    const { projUrl } = useParams();
-    const [loading, setLoading] = useState(true);
-    // const [error, setError] = useState(null);
-    const [data, setData] = useState([]);
-    const pag_url = `?pathname=${projUrl}`;
-
-    const fetchData = async (api_url, endpoint) => {
-        const final_url = api_url + endpoint;
-        const response = await api(final_url);
-        try {
-            setLoading(false);
-            setData(response);
-        } catch (err) {
-            setLoading(false);
-            // setError(err);
-        }
-    }
+function ProjectDetails() {
+    const {
+        loading,
+        data,
+        pag_url,
+        fetchData
+    } = useFetchProjData();
     useEffect(() => {
         fetchData(api_url, pag_url);
-    }, []);
-
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
     // If the app is fetching/loading
     if (loading) {
         return (

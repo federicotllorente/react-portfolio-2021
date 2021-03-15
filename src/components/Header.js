@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-function Header(props) {
+function Header() {
     let location = useLocation();
     const headerItems = [
         { id: 1, name: 'Portfolio', path: '/portfolio' },
@@ -25,8 +25,8 @@ function Header(props) {
                             {(location.pathname === el.path) ? (
                                 <Link className="currentPage" to={el.path}>{el.name}</Link>
                             ) : (
-                                    <Link to={el.path}>{el.name}</Link>
-                                )}
+                                <Link to={el.path}>{el.name}</Link>
+                            )}
                         </li>
                     );
                 })}

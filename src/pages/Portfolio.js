@@ -20,7 +20,7 @@ function Portfolio(props) {
     } = useFetchData();
     useEffect(() => {
         fetchData(api_url, pag_url);
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
     function handleSeeMoreProjects() {
         fetchNextData(api_url, pag_url);
     }
@@ -47,7 +47,7 @@ function Portfolio(props) {
     return (
         <div className="portfolio_wrapper">
             <h1>Portfolio</h1>
-            <p>Also, if you want to see all my projects, feel free to visit my <a href="https://github.com/federicotllorente">GitHub</a> and <a href="https://www.behance.net/federicollorente">Behance</a> profiles!</p>
+            <p>Also, if you want to see all my projects, feel free to visit my <a target="_blank" rel="noreferrer" href="https://github.com/federicotllorente">GitHub</a> and <a target="_blank" rel="noreferrer" href="https://www.behance.net/federicollorente">Behance</a> profiles!</p>
             <div className="project_wrapper">
                 {data && data.map(el => {
                     return (
