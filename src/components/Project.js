@@ -2,11 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Project(props) {
+    // Limit technologies list items to show
+    let technologiesNewArray = [];
+    const maxTechsToShow = 4;
+    for (let i = 0; i <= (maxTechsToShow - 1); i++) {
+        const el = props.data.technologies[i];
+        technologiesNewArray.push(el);
+    }
     return (
         <div className="project" key={props.data.id}>
             <div className="project__image">
                 <Link to={`portfolio/${props.data.pathname}`}>
-                    <img src={props.data.image} alt="Project Thumbnail" />
+                    <img src={props.data.images[0].url} alt="Project Thumbnail" />
                 </Link>
             </div>
             <div className="project__content">
@@ -21,7 +28,7 @@ function Project(props) {
                 <div className="project__content__technologies">
                     <h3>Technologies used</h3>
                     <ul>
-                        {props.data.technologies && props.data.technologies.map(el => {
+                        {props.data.technologies && technologiesNewArray.map(el => {
                             return (
                                 <li key={el.id}>{el.name}</li>
                             );
@@ -34,9 +41,9 @@ function Project(props) {
                         <li>{props.data.ux}</li>
                     </ul>
                 </div>
-                <a href={props.data.url}>See entire project</a>
+                <a href={props.data.url} target="_blank" rel="noreferrer">See entire project</a>
                 <br />
-                <a href={props.data.gitHub}>See code in GitHub</a>
+                <a href={props.data.gitHub} target="_blank" rel="noreferrer">See code in GitHub</a>
             </div>
         </div>
     );

@@ -9,11 +9,11 @@
             "technologies": [
                 {
                     "id": 1,
-                    "name": "React & React Router"
+                    "name": "React"
                 },
                 {
                     "id": 2,
-                    "name": "NodeJS & Express"
+                    "name": "NodeJS"
                 },
                 {
                     "id": 3,
@@ -22,12 +22,42 @@
                 {
                     "id": 4,
                     "name": "Sass / CSS"
+                },
+                {
+                    "id": 5,
+                    "name": "React Router"
+                },
+                {
+                    "id": 6,
+                    "name": "Express"
+                },
+                {
+                    "id": 7,
+                    "name": "Webpack"
+                },
+                {
+                    "id": 8,
+                    "name": "Babel"
                 }
             ],
             "ux": "Adobe XD",
             "url": "https://flashcards.federicotllorente.work/",
             "gitHub": "https://www.github.com/federicotllorente/flashcards-app/",
-            "image": "https://picsum.photos/400/500"
+            "images": [
+                {
+                    "id": 1,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 2,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 3,
+                    "url": "https://picsum.photos/400/500"
+                }
+            ],
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
         },
         {
             "id": 2,
@@ -38,7 +68,7 @@
             "technologies": [
                 {
                     "id": 1,
-                    "name": "React & React Router"
+                    "name": "React"
                 },
                 {
                     "id": 2,
@@ -47,12 +77,38 @@
                 {
                     "id": 3,
                     "name": "Sass / CSS"
+                },
+                {
+                    "id": 4,
+                    "name": "React Router"
+                },
+                {
+                    "id": 5,
+                    "name": "Webpack"
+                },
+                {
+                    "id": 6,
+                    "name": "Babel"
                 }
             ],
             "ux": "Adobe XD",
             "url": "https://allaboutfood.federicotllorente.work/",
             "gitHub": "https://www.github.com/federicotllorente/all-about-food/",
-            "image": "https://picsum.photos/400/500"
+            "images": [
+                {
+                    "id": 1,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 2,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 3,
+                    "url": "https://picsum.photos/400/500"
+                }
+            ],
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
         },
         {
             "id": 3,
@@ -63,7 +119,7 @@
             "technologies": [
                 {
                     "id": 1,
-                    "name": "React & React Router"
+                    "name": "React"
                 },
                 {
                     "id": 2,
@@ -72,12 +128,38 @@
                 {
                     "id": 3,
                     "name": "Sass / CSS"
+                },
+                {
+                    "id": 4,
+                    "name": "React Router"
+                },
+                {
+                    "id": 5,
+                    "name": "Webpack"
+                },
+                {
+                    "id": 6,
+                    "name": "Babel"
                 }
             ],
             "ux": "Adobe XD",
             "url": "https://badges.federicotllorente.work/",
             "gitHub": "https://www.github.com/federicotllorente/platzi-badges/",
-            "image": "https://picsum.photos/400/500"
+            "images": [
+                {
+                    "id": 1,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 2,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 3,
+                    "url": "https://picsum.photos/400/500"
+                }
+            ],
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
         },
         {
             "id": 4,
@@ -92,17 +174,35 @@
                 },
                 {
                     "id": 2,
-                    "name": "Webpack & Babel"
+                    "name": "Webpack"
                 },
                 {
                     "id": 3,
                     "name": "Sass / CSS"
+                },
+                {
+                    "id": 4,
+                    "name": "Babel"
                 }
             ],
             "ux": "Adobe XD",
             "url": "https://pokedex.federicotllorente.work/",
             "gitHub": "https://www.github.com/federicotllorente/app-pokemon-api/",
-            "image": "https://picsum.photos/400/500"
+            "images": [
+                {
+                    "id": 1,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 2,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 3,
+                    "url": "https://picsum.photos/400/500"
+                }
+            ],
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
         },
         {
             "id": 5,
@@ -113,21 +213,55 @@
             "technologies": [
                 {
                     "id": 1,
-                    "name": "React & React Router"
+                    "name": "React"
                 },
                 {
                     "id": 2,
-                    "name": "JavaScript"
+                    "name": "NodeJS"
                 },
                 {
                     "id": 3,
+                    "name": "MySQL"
+                },
+                {
+                    "id": 4,
                     "name": "Sass / CSS"
+                },
+                {
+                    "id": 5,
+                    "name": "React Router"
+                },
+                {
+                    "id": 6,
+                    "name": "Express"
+                },
+                {
+                    "id": 7,
+                    "name": "Webpack"
+                },
+                {
+                    "id": 8,
+                    "name": "Babel"
                 }
             ],
             "ux": "Adobe XD",
             "url": "https://www.federicotllorente.work/",
             "gitHub": "https://www.github.com/federicotllorente/react-portfolio-2021/",
-            "image": "https://picsum.photos/400/500"
+            "images": [
+                {
+                    "id": 1,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 2,
+                    "url": "https://picsum.photos/400/500"
+                },
+                {
+                    "id": 3,
+                    "url": "https://picsum.photos/400/500"
+                }
+            ],
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
         }
     ]
 }

@@ -32,9 +32,7 @@
                 top: 0;
                 left: 0;
                 &:hover {
-                    width: 500px;
-                    top: -50px;
-                    left: -50px;
+                    transform: scale(1.5);
                 }
             }
             &:hover {
@@ -82,11 +80,6 @@
                 img {
                     width: 320px;
                     height: auto;
-                    &:hover {
-                        width: 420px;
-                        top: -50px;
-                        left: -50px;
-                    }
                 }
             }
         }
@@ -128,11 +121,6 @@
                 img {
                     width: 280px;
                     height: auto;
-                    &:hover {
-                        width: 380px;
-                        top: -50px;
-                        left: -50px;
-                    }
                 }
             }
         }
@@ -174,11 +162,7 @@
             a {
                 img {
                     width: 70vw;
-                    &:hover {
-                        width: 80vw;
-                        top: -5vw;
-                        left: -5vw;
-                    }
+                    height: auto;
                 }
             }
         }
