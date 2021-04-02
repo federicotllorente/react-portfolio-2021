@@ -7,6 +7,7 @@ import Portfolio from '../pages/Portfolio';
 import ProjectDetails from '../pages/ProjectDetails';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
+import SignIn from '../pages/SignIn';
 import NotFound from '../pages/NotFound';
 import '../styles/main.css';
 
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path="/portfolio/:projUrl" component={ProjectDetails} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/sign-in" component={SignIn} />
                     <Route component={NotFound} />
                 </Switch>
             </Layout>

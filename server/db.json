@@ -57,7 +57,9 @@
                     "url": "https://picsum.photos/400/500"
                 }
             ],
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident.",
+            "inDevelopment": true,
+            "available": false
         },
         {
             "id": 2,
@@ -108,7 +110,9 @@
                     "url": "https://picsum.photos/400/500"
                 }
             ],
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident.",
+            "inDevelopment": true,
+            "available": false
         },
         {
             "id": 3,
@@ -159,7 +163,9 @@
                     "url": "https://picsum.photos/400/500"
                 }
             ],
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident.",
+            "inDevelopment": false,
+            "available": true
         },
         {
             "id": 4,
@@ -202,7 +208,9 @@
                     "url": "https://picsum.photos/400/500"
                 }
             ],
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident.",
+            "inDevelopment": false,
+            "available": true
         },
         {
             "id": 5,
@@ -261,7 +269,9 @@
                     "url": "https://picsum.photos/400/500"
                 }
             ],
-            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident."
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto ratione laborum officia similique non quidem necessitatibus modi minima tempora dicta.\n\nLorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus iusto repellat asperiores suscipit maxime recusandae cum, delectus sit explicabo provident.",
+            "inDevelopment": true,
+            "available": true
         }
     ]
 }
