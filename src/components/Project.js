@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Project(props) {
@@ -9,6 +9,7 @@ function Project(props) {
         const el = props.data.technologies[i];
         technologiesNewArray.push(el);
     }
+    const [showingNote, setShowingNote] = useState(false);
     return (
         <div className="project" key={props.data.id}>
             <div className="project__image">
@@ -41,9 +42,27 @@ function Project(props) {
                         <li>{props.data.ux}</li>
                     </ul>
                 </div>
-                <a href={props.data.url} target="_blank" rel="noreferrer">See entire project</a>
-                <br />
-                <a href={props.data.gitHub} target="_blank" rel="noreferrer">See code in GitHub</a>
+                {props.data.available ? (
+                    <React.Fragment>
+                        <a href={props.data.url} target="_blank" rel="noreferrer">See entire project</a>
+                        <br />
+                        <a href={props.data.gitHub} target="_blank" rel="noreferrer">See code in GitHub</a>
+                    </React.Fragment>
+                ) : (
+                    <div className="notAvailable">
+                        <a href={props.data.gitHub} target="_blank" rel="noreferrer">See code in GitHub</a>
+                        <br />
+                        <div>
+                            {showingNote && (
+                                <span className="notAvailable__note"><p><span>Note: </span> This project is currently in development, and it's not deployed yet. But if you want, you can see the code in its GitHub repository (click on 'See code in GitHub')</p></span>
+                            )}
+                            <p
+                                onMouseOver={e => setShowingNote(true)}
+                                onMouseLeave={e => setShowingNote(false)}
+                            >Where can I see this project?</p>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

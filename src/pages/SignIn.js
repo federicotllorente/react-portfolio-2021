@@ -6,6 +6,7 @@ const SignIn = () => {
     const handleChangeEmail = e => setEmail(e.target.value);
     const handleChangePassword = e => setPassword(e.target.value);
     const handleSubmit = e => {
+        // eslint-disable-next-line
         const formData = { email, password };
         // Submit data to sign in
     };

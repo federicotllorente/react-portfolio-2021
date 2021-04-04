@@ -149,6 +149,28 @@ body h3, body h4 {
   }
 }
 
+@-webkit-keyframes showNote {
+  0% {
+    margin: -225px 0 0 -10px;
+    opacity: 0;
+  }
+  100% {
+    margin: -205px 0 0 -10px;
+    opacity: 1;
+  }
+}
+
+@keyframes showNote {
+  0% {
+    margin: -225px 0 0 -10px;
+    opacity: 0;
+  }
+  100% {
+    margin: -205px 0 0 -10px;
+    opacity: 1;
+  }
+}
+
 .cls-1 {
   fill: none;
   stroke: #adadad;
@@ -683,6 +705,29 @@ header ul li a:hover {
 
 .project__content__ux {
   padding: 20px 0 20px;
+}
+
+.notAvailable > div > p:hover {
+  cursor: help;
+}
+
+.notAvailable__note {
+  max-width: 250px;
+  padding: 20px;
+  margin: -205px 0 0 -10px;
+  position: absolute;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ff803b;
+  color: #212121;
+  font-size: 15px;
+  -webkit-animation: showNote ease 0.5s;
+          animation: showNote ease 0.5s;
+}
+
+.notAvailable__note span {
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {

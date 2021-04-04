@@ -65,3 +65,16 @@
         opacity: 1;
     }
 }
+
+// Portfolio animations
+
+@keyframes showNote {
+    0% {
+        margin: -225px 0 0 -10px;
+        opacity: 0;
+    }
+    100% {
+        margin: -205px 0 0 -10px;
+        opacity: 1;
+    }
+}

@@ -70,6 +70,29 @@
     }
 }
 
+.notAvailable {
+    > div > p {
+        &:hover {
+            cursor: help;
+        }
+    }
+    &__note {
+        max-width: 250px;
+        padding: 20px;
+        margin: -205px 0 0 -10px;
+        position: absolute;
+        z-index: 2;
+        box-sizing: border-box;
+        background-color: $primaryColor;
+        color: $darkColor;
+        font-size: $mobileFontSize;
+        animation: showNote ease 0.5s;
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
 // Desktop version
 @media (max-width: $breakpointDesktop) {
     .project {
