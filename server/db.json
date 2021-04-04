@@ -1,4 +1,50 @@
 {
+    "technologies": [
+        {
+            "id": 1,
+            "name": "React"
+        },
+        {
+            "id": 2,
+            "name": "NodeJS"
+        },
+        {
+            "id": 3,
+            "name": "MongoDB"
+        },
+        {
+            "id": 4,
+            "name": "Sass / CSS"
+        },
+        {
+            "id": 5,
+            "name": "React Router"
+        },
+        {
+            "id": 6,
+            "name": "Express"
+        },
+        {
+            "id": 7,
+            "name": "Webpack"
+        },
+        {
+            "id": 8,
+            "name": "Babel"
+        },
+        {
+            "id": 9,
+            "name": "MySQL"
+        },
+        {
+            "id": 10,
+            "name": "JavaScript"
+        },
+        {
+            "id": 11,
+            "name": "Wordpress"
+        }
+    ],
     "projects": [
         {
             "id": 1,
@@ -73,23 +119,23 @@
                     "name": "React"
                 },
                 {
-                    "id": 2,
+                    "id": 10,
                     "name": "JavaScript"
                 },
                 {
-                    "id": 3,
+                    "id": 4,
                     "name": "Sass / CSS"
                 },
                 {
-                    "id": 4,
+                    "id": 5,
                     "name": "React Router"
                 },
                 {
-                    "id": 5,
+                    "id": 7,
                     "name": "Webpack"
                 },
                 {
-                    "id": 6,
+                    "id": 8,
                     "name": "Babel"
                 }
             ],
@@ -126,23 +172,23 @@
                     "name": "React"
                 },
                 {
-                    "id": 2,
+                    "id": 10,
                     "name": "JavaScript"
                 },
                 {
-                    "id": 3,
+                    "id": 4,
                     "name": "Sass / CSS"
                 },
                 {
-                    "id": 4,
+                    "id": 5,
                     "name": "React Router"
                 },
                 {
-                    "id": 5,
+                    "id": 7,
                     "name": "Webpack"
                 },
                 {
-                    "id": 6,
+                    "id": 8,
                     "name": "Babel"
                 }
             ],
@@ -175,19 +221,19 @@
             "year": 2021,
             "technologies": [
                 {
-                    "id": 1,
-                    "name": "JavaScript (Vanilla)"
+                    "id": 10,
+                    "name": "JavaScript"
                 },
                 {
-                    "id": 2,
+                    "id": 7,
                     "name": "Webpack"
                 },
                 {
-                    "id": 3,
+                    "id": 4,
                     "name": "Sass / CSS"
                 },
                 {
-                    "id": 4,
+                    "id": 8,
                     "name": "Babel"
                 }
             ],
@@ -228,7 +274,7 @@
                     "name": "NodeJS"
                 },
                 {
-                    "id": 3,
+                    "id": 9,
                     "name": "MySQL"
                 },
                 {

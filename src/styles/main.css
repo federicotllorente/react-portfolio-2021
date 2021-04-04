@@ -627,7 +627,48 @@ header ul li a:hover {
 }
 
 .portfolio_wrapper > p, .project_details > p {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
+}
+
+.portfolio_wrapper__filters {
+  margin-bottom: 60px;
+}
+
+.portfolio_wrapper__filters div {
+  padding: 10px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.portfolio_wrapper__filters div button {
+  padding: 10px 20px;
+  margin: 10px 10px 0 0;
+  border: 2px solid #adadad;
+  background-color: transparent;
+  color: #adadad;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.portfolio_wrapper__filters div button:hover {
+  cursor: pointer;
+  border: 2px solid #ff803b;
+  color: #ff803b;
+}
+
+.portfolio_wrapper__filters--selected {
+  border: none;
+  background-color: #adadad;
+  color: #212121;
+}
+
+.portfolio_wrapper__filters--selected:hover {
+  background-color: #ff803b;
 }
 
 .portfolio_wrapper .portfolio__see_more_button, .project_details .portfolio__see_more_button {

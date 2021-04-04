@@ -9,6 +9,7 @@ function Project(props) {
         const el = props.data.technologies[i];
         technologiesNewArray.push(el);
     }
+    // Show availability note
     const [showingNote, setShowingNote] = useState(false);
     return (
         <div className="project" key={props.data.id}>
