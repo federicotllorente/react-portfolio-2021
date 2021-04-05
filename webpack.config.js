@@ -2,6 +2,7 @@ require("core-js/stable");
 require("regenerator-runtime/runtime");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require("dotenv-webpack");
 
 const entry = [
     'core-js',
@@ -63,6 +64,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new Dotenv(),
         new HtmlWebpackPlugin({
             template: './public/index.html'
         })
