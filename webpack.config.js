@@ -3,12 +3,19 @@ require("regenerator-runtime/runtime");
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require("dotenv-webpack");
+const Webpack = require('webpack');
 
 const entry = [
     'core-js',
     'regenerator-runtime',
     './src/index.js'
 ];
+
+const clientConfig = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true';
+
+if (process.env.NODE_ENV === 'development') {
+    entry.push(clientConfig);
+}
 
 module.exports = {
     mode: 'development',
@@ -65,6 +72,7 @@ module.exports = {
     },
     plugins: [
         new Dotenv(),
+        new Webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html'
         })
