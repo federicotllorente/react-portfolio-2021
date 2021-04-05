@@ -14,7 +14,8 @@ module.exports = {
     entry: entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js']
@@ -69,6 +70,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
-        port: 3000
+        port: 3000,
+        historyApiFallback: true
     }
 };
