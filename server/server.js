@@ -1,13 +1,16 @@
 require('dotenv').config();
 const express = require('express');
 const webpack = require('webpack');
+const helmet = require('helmet');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const router = require('./router');
+const connectDB = require('./db');
 
 const app = express();
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-
 if (process.env.NODE_ENV === 'development') {
-    console.log('Development environment');
+    console.log('[server] Development environment');
     const webpackConfig = require('../webpack.config');
     const webpackDevMiddleware = require('webpack-dev-middleware');
     const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -16,8 +19,20 @@ if (process.env.NODE_ENV === 'development') {
     app.use(webpackDevMiddleware(compiler, serverConfig));
     app.use(webpackHotMiddleware(compiler));
 } else {
-    console.log('Production environment');
+    console.log('[server] Production environment');
+    app.use(express.static('../dist'));
+    app.use(helmet());
+    app.use(helmet.permittedCrossDomainPolicies()); // To prevent loading content with Adobe Flash and Acrobat
+    app.disable('x-powered-by'); // To prevent possible attacks to certain dependencies we're using
 }
+
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+connectDB(uri); // Connect to the database
+
+app.use(cors()); // To enable all CORS requests
+app.use(bodyParser.json()); // To parse JSON requests
+app.use(bodyParser.urlencoded({ extended: false })); // To parse URL Encoded requests
+app.use('/api', router); // To manage all the API routes (like '/api/projects' or '/api/technologies')
 
 app.get('*', (req, res) => {
     res.send(`
