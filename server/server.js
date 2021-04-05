@@ -4,6 +4,8 @@ const webpack = require('webpack');
 
 const app = express();
 
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+
 if (process.env.NODE_ENV === 'development') {
     console.log('Development environment');
     const webpackConfig = require('../webpack.config');
@@ -18,7 +20,22 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.get('*', (req, res) => {
-    res.send({ hello: 'express' });
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="description" content="Front-end Developer Portfolio by Federico Tejedor Llorente" />
+                <title>Front-end Developer – Federico Tejedor Llorente</title>
+            </head>
+            <body>
+                <noscript>You need to enable JavaScript to run this app.</noscript>
+                <div id="root"></div>
+                <script src="bundle.js" type="text/javascript"></script>
+            </body>
+        </html>
+    `);
 });
 
 app.listen(process.env.PORT, err => {

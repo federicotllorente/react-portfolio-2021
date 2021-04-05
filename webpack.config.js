@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 module.exports = {
-    mode: 'development',
+    mode: process.env.NODE_ENV,
     entry: entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -78,9 +78,9 @@ module.exports = {
         })
     ],
     devServer: {
+        historyApiFallback: true,
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
-        port: 3000,
-        historyApiFallback: true
+        port: process.env.PORT
     }
 };
