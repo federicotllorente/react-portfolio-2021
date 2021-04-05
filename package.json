@@ -41,5 +41,28 @@
   "devDependencies": {
     "json-server": "^0.16.3",
     "npm-run-all": "^4.1.5"
-  }
+  },
+  "description": "This is my portfolio made with React and Express",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/federicotllorente/react-portfolio-2021.git"
+  },
+  "keywords": [
+    "react",
+    "react-dom",
+    "javascript",
+    "react-router",
+    "react-router-dom",
+    "webpack",
+    "babel",
+    "express",
+    "sass"
+  ],
+  "author": "Federico Tejedor Llorente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/federicotllorente/react-portfolio-2021/issues"
+  },
+  "homepage": "https://github.com/federicotllorente/react-portfolio-2021#readme"
 }
