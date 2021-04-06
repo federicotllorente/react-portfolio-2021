@@ -24,39 +24,39 @@ function ProjectDetails() {
         );
     }
     // If it's successfully fetched the data
-    if (data[0]) {
+    if (data.body) {
         return (
             <div className="project_details">
-                <h1>{data[0].name}</h1>
+                <h1>{data.body[0].name}</h1>
                 <div className="project_details__main_image">
-                    <img src={data[0].images[0].url} alt={data[0].name} />
+                    <img src={data.body[0].images[0].url} alt={data.body[0].name} />
                 </div>
                 <div className="project_details__intro">
                     <div className="project_details__intro__tech">
                         <h2>Technical sheet</h2>
                         <p>These are the technologies I used in this project</p>
                         <ul>
-                            {data[0].technologies.map(el => {
+                            {data.body[0].technologies.map(el => {
                                 return (
-                                    <li key={el.id}>–{el.name}</li>
+                                    <li key={el._id}>–{el.name}</li>
                                 );
                             })}
                         </ul>
                         <h3>UX Designed with</h3>
-                        <p>{data[0].ux}</p>
-                        <a href={data[0].url} target="_blank" rel="noreferrer">See entire project</a>
+                        <p>{data.body[0].ux}</p>
+                        <a href={data.body[0].url} target="_blank" rel="noreferrer">See entire project</a>
                         <br />
-                        <a href={data[0].gitHub} target="_blank" rel="noreferrer">See code in GitHub</a>
+                        <a href={data.body[0].gitHub} target="_blank" rel="noreferrer">See code in GitHub</a>
                     </div>
                     <div className="project_details__intro__description">
                         <h2>About this project</h2>
-                        <p>{data[0].description}</p>
+                        <p>{data.body[0].descriptionENG}</p>
                     </div>
                 </div>
                 <div className="project_details__photos">
-                    {data[0].images.map(el => {
+                    {data.body[0].images.map(el => {
                         return (
-                            <img key={el.id} src={el.url} alt={`${data[0].name} ${el.id}`} />
+                            <img key={el._id} src={el.url} alt={`${data.body[0].name} ${el._id}`} />
                         )
                     })}
                 </div>

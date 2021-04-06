@@ -12,7 +12,7 @@ function Project(props) {
     // Show availability note
     const [showingNote, setShowingNote] = useState(false);
     return (
-        <div className="project" key={props.data.id}>
+        <div className="project" key={props.data._id}>
             <div className="project__image">
                 <Link to={`portfolio/${props.data.pathname}`}>
                     <img src={props.data.images[0].url} alt="Project Thumbnail" />
@@ -25,14 +25,14 @@ function Project(props) {
                     </Link>
                 </h2>
                 <p className="project__content__description">
-                    {props.data.type} – {props.data.year}
+                    {props.data.typeENG} – {props.data.year}
                 </p>
                 <div className="project__content__technologies">
                     <h3>Technologies used</h3>
                     <ul>
                         {props.data.technologies && technologiesNewArray.map(el => {
                             return (
-                                <li key={el.id}>{el.name}</li>
+                                <li key={el._id}>{el.name}</li>
                             );
                         })}
                     </ul>
