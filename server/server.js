@@ -5,9 +5,10 @@ const helmet = require('helmet');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const router = require('./router');
-const connectDB = require('./db');
+const connect = require('./db');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV === 'development') {
     console.log('[server] Development environment');
@@ -15,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
     const webpackDevMiddleware = require('webpack-dev-middleware');
     const webpackHotMiddleware = require('webpack-hot-middleware');
     const compiler = webpack(webpackConfig);
-    const serverConfig = { port: process.env.PORT, hot: true };
+    const serverConfig = { port: port, hot: true };
     app.use(webpackDevMiddleware(compiler, serverConfig));
     app.use(webpackHotMiddleware(compiler));
 } else {
@@ -27,7 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-connectDB(uri); // Connect to the database
+connect(uri); // Connect to the database
 
 app.use(cors()); // To enable all CORS requests
 app.use(bodyParser.json()); // To parse JSON requests
@@ -53,10 +54,10 @@ app.get('*', (req, res) => {
     `);
 });
 
-app.listen(process.env.PORT, err => {
+app.listen(port, err => {
     if (err) {
         console.error(err);
     } else {
-        console.log(`Server running on port ${process.env.PORT}`);
+        console.log(`Server running on port ${port}`);
     }
 });
