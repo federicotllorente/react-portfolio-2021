@@ -6,7 +6,7 @@ function useFetchData() {
     const [loading, setLoading] = useState(true);
     // const [error, setError] = useState(null);
     const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     const [noMoreData, setNoMoreData] = useState(false);
     const [showingNoMoreDataModal, setShowingNoMoreDataModal] = useState(false);
     const pag_url = `?_page=${currentPage}&_limit=3`;

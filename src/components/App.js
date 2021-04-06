@@ -9,7 +9,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import SignIn from '../pages/SignIn';
 import NotFound from '../pages/NotFound';
-import '../styles/main.css';
+import '../styles/main.scss';
 
 function App() {
     return (

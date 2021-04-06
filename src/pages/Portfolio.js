@@ -1,47 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import useFetchData from '../hooks/useFetchData';
+import useFetchFilters from '../hooks/useFetchFilters';
 import Project from '../components/Project';
 import NoMoreDataModal from '../components/NoMoreDataModal';
 
-const api_projects = 'http://localhost:3001/projects';
-const api_technologies = 'http://localhost:3001/technologies';
+const currentHost = window.location.origin;
+const api_projects = `${currentHost}/api/projects`;
+const api_technologies = `${currentHost}/api/technologies`;
 
-const useFetchFilters = () => {
-    const [filters, setFilters] = useState([]);
-    const [loadingFilters, setLoadingFilters] = useState(false);
-    const [errorFilters, setErrorFilters] = useState(null);
-    const fetchFilters = async api_url => {
-        setLoadingFilters(true);
-        const result = await fetch(api_url);
-        const data = await result.json();
-        try {
-            setLoadingFilters(false);
-            let newFilters = [];
-            data.forEach(el => {
-                const newFilter = {
-                    id: el.id,
-                    name: el.name,
-                    selected: false
-                };
-                newFilters.push(newFilter);
-            });
-            setFilters(newFilters);
-        } catch (error) {
-            setLoadingFilters(false);
-            setErrorFilters(error);
-        }
-    };
-    return {
-        filters,
-        loadingFilters,
-        errorFilters,
-        fetchFilters
-    };
-};
-
-function Portfolio(props) {
+function Portfolio() {
     const {
         loading,
         data,
@@ -73,7 +42,7 @@ function Portfolio(props) {
         <div className="loader"></div>
     )
     // If there's no data
-    if (Object.keys(data).length === 0 && !loading) (
+    if (data.body && data.body.length === 0 && !loading) (
         <div className="error">
             <h2>Sorry! But there's an error</h2>
             <p>We couldn't find any data. Please, try again later.</p>
@@ -105,9 +74,9 @@ function Portfolio(props) {
                 </div>
             </div>
             <div className="project_wrapper">
-                {data && data.map(el => {
+                {data.body && data.body.map(el => {
                     return (
-                        <Project key={el.id} data={el} />
+                        <Project key={el._id} data={el} />
                     );
                 })}
             </div>

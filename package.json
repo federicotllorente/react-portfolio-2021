@@ -6,19 +6,28 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+    "body-parser": "^1.19.0",
+    "core-js": "^3.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^7.0.2",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "mongoose": "^5.12.3",
+    "path": "^0.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hot-loader": "^4.13.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.0"
+    "regenerator-runtime": "^0.13.7",
+    "web-vitals": "^1.1.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
   },
   "scripts": {
-    "start": "npm-run-all --parallel client server",
-    "client": "react-scripts start",
-    "server": "json-server --port 3001 --watch server/db.json",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server/index",
+    "start:dev": "nodemon server/index",
+    "build": "webpack-cli --config webpack.config.js"
   },
   "eslintConfig": {
     "extends": [
@@ -39,7 +48,53 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^0.16.3",
-    "npm-run-all": "^4.1.5"
-  }
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/register": "^7.13.14",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.2.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "nodemon": "^2.0.7",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "description": "This is my portfolio made with the MERN stack (MongoDB, Express, React and Nodejs)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/federicotllorente/react-portfolio-2021.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-dom",
+    "node",
+    "nodejs",
+    "javascript",
+    "react-router",
+    "react-router-dom",
+    "webpack",
+    "babel",
+    "express",
+    "sass",
+    "mongodb",
+    "nosql"
+  ],
+  "author": "Federico Tejedor Llorente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/federicotllorente/react-portfolio-2021/issues"
+  },
+  "homepage": "https://github.com/federicotllorente/react-portfolio-2021#readme"
 }
