@@ -1,12 +1,23 @@
 const models = require('./models');
 
-const getProjects = filterProject => {
+const getProjects = (filterTechnology, filterPathname, page, limit) => {
     return new Promise((resolve, reject) => {
         let filter = {};
-        if (filterProject) {
-            filter = { technologies: { _id: filterProject } };
+        if (filterTechnology && filterPathname) {
+            filter = {
+                pathname: filterPathname,
+                technologies: { _id: filterTechnology }
+            };
+        } else if (filterTechnology && !filterPathname) {
+            filter = { technologies: { _id: filterTechnology } };
+        } else if (filterPathname && !filterTechnology) {
+            filter = { pathname: filterPathname };
         }
+        const pageRequested = parseInt(page, 10) || 0;
+        const limitRequested = parseInt(limit, 10) || 25;
         return resolve(models.Projects.find(filter)
+            .skip(limitRequested * pageRequested)
+            .limit(limitRequested)
             .populate('technologies')
             .catch(error => reject(error)));
     });

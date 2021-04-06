@@ -19,8 +19,11 @@ const response = {
 };
 
 router.get('/projects', (req, res) => {
-    const filter = req.query.technology || ''; // '/projects?technology=ID'
-    controllers.getProjects(filter)
+    const filterTechnology = req.query.technology || ''; // '/projects?technology=ID'
+    const filterPathname = req.query.pathname || ''; // '/projects?pathname=path'
+    const page = req.query._page; // '/projects?_page=X'
+    const limit = req.query._limit; // '/projects?_limit=X'
+    controllers.getProjects(filterTechnology, filterPathname, page, limit)
         .then(data => response.success(req, res, data, 200))
         .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to get the projects'));
 });

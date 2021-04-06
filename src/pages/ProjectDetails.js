@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import useFetchProjData from '../hooks/useFetchProjData';
 import NotFound from './NotFound';
 
-const api_url = 'http://localhost:3001/projects';
+const currentHost = window.location.origin;
+const api_url = `${currentHost}/api/projects`;
 
 function ProjectDetails() {
     const {

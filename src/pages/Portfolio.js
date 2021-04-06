@@ -5,8 +5,9 @@ import useFetchData from '../hooks/useFetchData';
 import Project from '../components/Project';
 import NoMoreDataModal from '../components/NoMoreDataModal';
 
-const api_projects = 'http://localhost:3001/projects';
-const api_technologies = 'http://localhost:3001/technologies';
+const currentHost = window.location.origin;
+const api_projects = `${currentHost}/api/projects`;
+const api_technologies = `${currentHost}/api/technologies`;
 
 const useFetchFilters = () => {
     const [filters, setFilters] = useState([]);
