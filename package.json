@@ -75,6 +75,7 @@
     "type": "git",
     "url": "git+https://github.com/federicotllorente/react-portfolio-2021.git"
   },
+  "type": "module",
   "keywords": [
     "react",
     "reactjs",
