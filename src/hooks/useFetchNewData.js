@@ -16,7 +16,6 @@ const useFetchNewData = (api_projects, filters, setFilters) => {
                 url.concat(addToURL);
             }
         }
-        console.log(url);
         const result = await fetch(url);
         const data = await result.json();
         try {
@@ -58,8 +57,6 @@ const useFetchNewData = (api_projects, filters, setFilters) => {
         loadingNewData,
         errorNewData,
         filtersSelected,
-        setFiltersSelected,
-        fetchNewData,
         handleSelectFilter,
         handleDeselectFilter
     };

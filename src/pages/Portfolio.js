@@ -29,6 +29,14 @@ const Portfolio = () => {
         errorFilters,
         fetchFilters
     } = useFetchFilters();
+    const {
+        newData,
+        loadingNewData,
+        errorNewData,
+        filtersSelected,
+        handleSelectFilter,
+        handleDeselectFilter
+    } = useFetchNewData(api_projects, filters, setFilters);
     useEffect(() => {
         fetchData(api_projects, pag_url);
         fetchFilters(api_technologies);
@@ -40,36 +48,25 @@ const Portfolio = () => {
         setShowingNoMoreDataModal(false);
     }
     // If the data or the filters are loading
-    if (loading || loadingFilters) (
+    if (loading || loadingFilters || loadingNewData) (
         <div className="loader"></div>
     )
     // If there's no data
-    if (data.body && data.body.length === 0 && !loading) (
+    if (data.body && data.body.length == 0 && !loading) (
         <div className="error">
             <h2>Sorry! But there's an error</h2>
             <p>We couldn't find any data. Please, try again later.</p>
             <Link to="/">Return to the Homepage</Link>
         </div>
     )
-    // If there's an error fetching the filters
-    if (errorFilters) (
+    // If there's an error fetching the filters or the filtered data
+    if (errorFilters || errorNewData) (
         <div className="error">
             <h2>Sorry! But there's an error</h2>
             <p>We couldn't find what you're looking for. Please, try again later.</p>
             <Link to="/">Return to the Homepage</Link>
         </div>
     )
-
-    const {
-        newData,
-        loadingNewData,
-        errorNewData,
-        filtersSelected,
-        setFiltersSelected,
-        fetchNewData,
-        handleSelectFilter,
-        handleDeselectFilter
-    } = useFetchNewData(api_projects, filters, setFilters);
     return (
         <div className="portfolio_wrapper">
             <h1>Portfolio</h1>
@@ -86,7 +83,7 @@ const Portfolio = () => {
                 </div>
             </div>
             <div className="project_wrapper">
-                {!filtersSelected && (
+                {(filtersSelected && filtersSelected.length == 0) && (
                     <React.Fragment>
                         {data.body && data.body.map(el => {
                             return (
@@ -95,7 +92,7 @@ const Portfolio = () => {
                         })}
                     </React.Fragment>
                 )}
-                {filtersSelected && (
+                {(filtersSelected && filtersSelected.length >= 1) && (
                     <React.Fragment>
                         {newData.body && newData.body.map(el => {
                             return (
@@ -104,10 +101,19 @@ const Portfolio = () => {
                         })}
                     </React.Fragment>
                 )}
+                {(newData.body && newData.body.length == 0 &&
+                    filtersSelected && filtersSelected.length >= 1 && !loadingNewData) && (
+                        <div className="error">
+                            <h2>It seems that there's no projects!</h2>
+                            <p>We couldn't find any with the filters requested. Please, try again other ones.</p>
+                        </div>
+                    )}
             </div>
-            {(!noMoreData) && (
-                <div className="portfolio__see_more_button" onClick={handleSeeMoreProjects}>See more projects</div>
-            )}
+            {((!noMoreData && data.body && data.body.length >= 3) ||
+                (data.body && data.body.length !== 0 && data.body.length % 4 == 0) ||
+                (newData.body && newData.body.length !== 0 && newData.body.length % 4 == 0)) && (
+                    <div className="portfolio__see_more_button" onClick={handleSeeMoreProjects}>See more projects</div>
+                )}
             {showingNoMoreDataModal && (
                 <NoMoreDataModal handleCloseNoMoreDataModal={handleCloseNoMoreDataModal} />
             )}
