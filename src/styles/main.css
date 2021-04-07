@@ -661,13 +661,13 @@ header ul li a:hover {
   color: #ff803b;
 }
 
-.portfolio_wrapper__filters--selected {
+.portfolio_wrapper__filters div button.selected {
   border: none;
   background-color: #adadad;
   color: #212121;
 }
 
-.portfolio_wrapper__filters--selected:hover {
+.portfolio_wrapper__filters div button.selected:hover {
   background-color: #ff803b;
 }
 

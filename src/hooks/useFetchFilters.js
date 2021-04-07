@@ -27,6 +27,7 @@ const useFetchFilters = () => {
     };
     return {
         filters,
+        setFilters,
         loadingFilters,
         errorFilters,
         fetchFilters

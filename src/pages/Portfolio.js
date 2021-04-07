@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import useFetchData from '../hooks/useFetchData';
 import useFetchFilters from '../hooks/useFetchFilters';
+import useFetchNewData from '../hooks/useFetchNewData';
 import Project from '../components/Project';
 import NoMoreDataModal from '../components/NoMoreDataModal';
 
@@ -10,7 +11,7 @@ const currentHost = window.location.origin;
 const api_projects = `${currentHost}/api/projects`;
 const api_technologies = `${currentHost}/api/technologies`;
 
-function Portfolio() {
+const Portfolio = () => {
     const {
         loading,
         data,
@@ -23,6 +24,7 @@ function Portfolio() {
     } = useFetchData();
     const {
         filters,
+        setFilters,
         loadingFilters,
         errorFilters,
         fetchFilters
@@ -57,7 +59,17 @@ function Portfolio() {
             <Link to="/">Return to the Homepage</Link>
         </div>
     )
-    // If it's successfully fetched the data
+
+    const {
+        newData,
+        loadingNewData,
+        errorNewData,
+        filtersSelected,
+        setFiltersSelected,
+        fetchNewData,
+        handleSelectFilter,
+        handleDeselectFilter
+    } = useFetchNewData(api_projects, filters, setFilters);
     return (
         <div className="portfolio_wrapper">
             <h1>Portfolio</h1>
@@ -67,18 +79,31 @@ function Portfolio() {
                 <p>Filter projects by the technologies used</p>
                 <div>
                     {filters && filters.map(el => el.selected ? (
-                        <button key={el.id} className="portfolio_wrapper__filters--selected">{el.name}</button>
+                        <button key={el.id} onClick={e => handleDeselectFilter(el.id)} className="selected">{el.name}</button>
                     ) : (
-                        <button key={el.id}>{el.name}</button>
+                        <button key={el.id} onClick={e => handleSelectFilter(el.id)}>{el.name}</button>
                     ))}
                 </div>
             </div>
             <div className="project_wrapper">
-                {data.body && data.body.map(el => {
-                    return (
-                        <Project key={el._id} data={el} />
-                    );
-                })}
+                {!filtersSelected && (
+                    <React.Fragment>
+                        {data.body && data.body.map(el => {
+                            return (
+                                <Project key={el._id} data={el} />
+                            );
+                        })}
+                    </React.Fragment>
+                )}
+                {filtersSelected && (
+                    <React.Fragment>
+                        {newData.body && newData.body.map(el => {
+                            return (
+                                <Project key={el._id} data={el} />
+                            );
+                        })}
+                    </React.Fragment>
+                )}
             </div>
             {(!noMoreData) && (
                 <div className="portfolio__see_more_button" onClick={handleSeeMoreProjects}>See more projects</div>
@@ -88,6 +113,6 @@ function Portfolio() {
             )}
         </div>
     );
-}
+};
 
 export default Portfolio;

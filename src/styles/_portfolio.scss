@@ -27,14 +27,14 @@
                     border: 2px solid $primaryColor;
                     color: $primaryColor;
                 }
-            }
-        }
-        &--selected {
-            border: none;
-            background-color: $lightColor;
-            color: $darkColor;
-            &:hover {
-                background-color: $primaryColor;
+                &.selected {
+                    border: none;
+                    background-color: $lightColor;
+                    color: $darkColor;
+                    &:hover {
+                        background-color: $primaryColor;
+                    }
+                }
             }
         }
     }
