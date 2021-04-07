@@ -1,37 +1,35 @@
 require("core-js/stable");
 require("regenerator-runtime/runtime");
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require("dotenv-webpack");
 const Webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
-const entry = [
-    'core-js',
-    'regenerator-runtime',
-    './src/index.js'
-];
+const isDev = (process.env.NODE_ENV === 'development');
+const entry = ['core-js', 'regenerator-runtime', './src/index.js'];
 
-const clientConfig = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true';
-
-if (process.env.NODE_ENV === 'development') {
+if (isDev) {
+    const clientConfig = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true';
     entry.push(clientConfig);
 }
 
 module.exports = {
+    devtool: 'source-map',
+    entry,
     mode: process.env.NODE_ENV,
-    entry: entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js', '.mjs', '.json']
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -71,8 +69,12 @@ module.exports = {
         ]
     },
     plugins: [
+        isDev ? new Webpack.HotModuleReplacementPlugin() : () => { },
+        isDev ? () => { } : new CompressionWebpackPlugin({
+            test: /\.js$|\.css$/,
+            filename: '[path][base].gz'
+        }),
         new Dotenv(),
-        new Webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html'
         })

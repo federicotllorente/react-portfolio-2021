@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Project(props) {
+const Project = props => {
     // Limit technologies list items to show
     let technologiesNewArray = [];
     const maxTechsToShow = 4;
@@ -67,6 +67,6 @@ function Project(props) {
             </div>
         </div>
     );
-}
+};
 
 export default Project;

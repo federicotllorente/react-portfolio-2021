@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const helmet = require('helmet');
@@ -21,7 +22,7 @@ if (process.env.NODE_ENV === 'development') {
     app.use(webpackHotMiddleware(compiler));
 } else {
     console.log('[server] Production environment');
-    app.use(express.static('../dist'));
+    app.use(express.static(path.join(__dirname, 'dist')));
     app.use(helmet());
     app.use(helmet.permittedCrossDomainPolicies()); // To prevent loading content with Adobe Flash and Acrobat
     app.disable('x-powered-by'); // To prevent possible attacks to certain dependencies we're using

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import bioPhoto from 'https://federicotllorente.com/wp-content/uploads/2021/04/bio_photo.png';
+import bioPhoto from '../img/bio_photo.png';
 
 class About extends Component {
     render() {
