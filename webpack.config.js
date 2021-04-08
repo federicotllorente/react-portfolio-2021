@@ -1,13 +1,12 @@
-require("core-js/stable");
-require("regenerator-runtime/runtime");
 const path = require('path');
 const Dotenv = require("dotenv-webpack");
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isDev = (process.env.NODE_ENV === 'development');
-const entry = ['core-js', 'regenerator-runtime', './src/index.js'];
+const entry = ['./src/index.js'];
 
 if (isDev) {
     const clientConfig = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true';
@@ -23,8 +22,12 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()]
+    },
     resolve: {
-        extensions: ['.js', '.mjs', '.json']
+        extensions: ['.js']
     },
     module: {
         rules: [
@@ -74,10 +77,10 @@ module.exports = {
             test: /\.js$|\.css$/,
             filename: '[path][base].gz'
         }),
-        new Dotenv(),
         new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
+            template: './src/index.html'
+        }),
+        new Dotenv()
     ],
     devServer: {
         historyApiFallback: true,
