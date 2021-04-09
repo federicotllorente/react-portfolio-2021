@@ -8,12 +8,10 @@ const useFetchNewData = (api_projects, filters, setFilters) => {
     const fetchNewData = async (api_url, filters) => {
         setLoadingNewData(true);
         let url = `${api_url}?technology=${filters[0]}`;
-        if (filters.length == 0) {
-            url = api_url;
-        } else if (filters.length >= 2) {
+        if (filters.length == 0) url = api_url;
+        if (filters.length >= 2) {
             for (let i = 1; i < filters.length; i++) {
-                const addToURL = `&technology=${filters[i]}`;
-                url.concat(addToURL);
+                url = `${url},${filters[i]}`;
             }
         }
         const result = await fetch(url);
