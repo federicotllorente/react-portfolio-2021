@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const useFetchNewData = (api_projects, filters, setFilters) => {
     const [newData, setNewData] = useState([]);
     const [loadingNewData, setLoadingNewData] = useState(false);
     const [errorNewData, setErrorNewData] = useState(null);
     const [filtersSelected, setFiltersSelected] = useState([]);
-    const fetchNewData = async (api_url, filters) => {
+    const fetchNewData = useCallback(async (api_url, filters) => {
         setLoadingNewData(true);
         let url = `${api_url}?technology=${filters[0]}`;
         if (filters.length == 0) url = api_url;
@@ -23,7 +23,7 @@ const useFetchNewData = (api_projects, filters, setFilters) => {
             setLoadingNewData(false);
             setErrorNewData(error);
         }
-    };
+    }, []); // I use useCallback() to memoize the data so the next time new data is fetched the App can perform better
     const handleSelectFilter = technologyId => {
         const allFiltersSelected = [filtersSelected, technologyId].flat();
         setFiltersSelected(allFiltersSelected);
