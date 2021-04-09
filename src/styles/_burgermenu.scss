@@ -7,7 +7,7 @@
 
 // Burger menu
 .burger_menu {
-    padding: 50px 25px;
+    padding: 35px 25px;
     margin: 0;
     width: 280px;
     height: 100vh;
@@ -21,15 +21,15 @@
     animation: showBurgerMenu ease 1s;
     transition: 0.3s;
     h2 {
-        margin: 0 0 20px;
+        margin: 0 0 10px;
         color: $midColor;
     }
     h3 {
-        margin: 40px 0 20px;
+        margin: 20px 0 10px;
         color: $midColor;
     }
     ul li {
-        margin: 10px 0;
+        margin: 5px 0;
         list-style: none;
     }
     a {
@@ -43,9 +43,40 @@
         }
     }
     p {
-        margin-top: 40px;
-        font-size: 15px;
+        margin-top: 20px;
+        font-size: $mobileFontSize;
         color: $midColor;
+    }
+    > span {
+        font-size: $mobileFontSize;
+    }
+    &__lang_btn {
+        padding: 10px 0 20px;
+        button {
+            padding: 5px 10px;
+            margin-right: 10px;
+            background-color: transparent;
+            color: $lightColor;
+            font-size: $mobileFontSize;
+            font-family: $mainFontFamily;
+            border: 2px solid $lightColor;
+            transition: 0.2s;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            &:hover {
+                cursor: pointer;
+                border: 2px solid $primaryColor;
+                color: $primaryColor;
+            }
+            &.lang_selected {
+                background-color: $lightColor;
+                color: $darkColor;
+                &:hover {
+                    background-color: $primaryColor;
+                }
+            }
+        }
     }
     &__close_btn {
         padding: 30px 25px;

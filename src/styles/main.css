@@ -178,7 +178,7 @@ body h3, body h4 {
 }
 
 .burger_menu {
-  padding: 50px 25px;
+  padding: 35px 25px;
   margin: 0;
   width: 280px;
   height: 100vh;
@@ -198,17 +198,17 @@ body h3, body h4 {
 }
 
 .burger_menu h2 {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   color: #4d4d4d;
 }
 
 .burger_menu h3 {
-  margin: 40px 0 20px;
+  margin: 20px 0 10px;
   color: #4d4d4d;
 }
 
 .burger_menu ul li {
-  margin: 10px 0;
+  margin: 5px 0;
   list-style: none;
 }
 
@@ -226,9 +226,49 @@ body h3, body h4 {
 }
 
 .burger_menu p {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 15px;
   color: #4d4d4d;
+}
+
+.burger_menu > span {
+  font-size: 15px;
+}
+
+.burger_menu__lang_btn {
+  padding: 10px 0 20px;
+}
+
+.burger_menu__lang_btn button {
+  padding: 5px 10px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: #adadad;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  border: 2px solid #adadad;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.burger_menu__lang_btn button:last-of-type {
+  margin-right: 0;
+}
+
+.burger_menu__lang_btn button:hover {
+  cursor: pointer;
+  border: 2px solid #ff803b;
+  color: #ff803b;
+}
+
+.burger_menu__lang_btn button.lang_selected {
+  background-color: #adadad;
+  color: #212121;
+  border: none;
+}
+
+.burger_menu__lang_btn button.lang_selected:hover {
+  background-color: #ff803b;
 }
 
 .burger_menu__close_btn {
