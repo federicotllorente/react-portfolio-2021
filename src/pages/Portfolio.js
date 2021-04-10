@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import useFetchData from '../hooks/useFetchData';
 import useFetchFilters from '../hooks/useFetchFilters';
 import useFetchNewData from '../hooks/useFetchNewData';
 
-import Project from '../components/Project';
-import NoMoreDataModal from '../components/NoMoreDataModal';
-import { NoDataError, FetchingFiltersError, NoProjectsError } from '../components/ErrorMessages';
+import PortfolioENG from '../views/english/PortfolioENG';
+import PortfolioSPA from '../views/spanish/PortfolioSPA';
+
+import { NoDataError, FetchingFiltersError } from '../components/ErrorMessages';
 
 const currentHost = window.location.origin;
 const api_projects = `${currentHost}/api/projects`;
 const api_technologies = `${currentHost}/api/technologies`;
 
-const Portfolio = () => {
+const Portfolio = props => {
     const {
         loading, data, noMoreData,
         showingNoMoreDataModal, setShowingNoMoreDataModal,
@@ -36,37 +38,39 @@ const Portfolio = () => {
     // If the data or the filters are loading
     if (loading || loadingFilters || loadingNewData) (<div className="loader"></div>);
     // If there's no data
-    if (data.body?.length == 0 && !loading) (<NoDataError />)
+    if (data.body?.length == 0 && !loading) (<NoDataError language={props.language} />)
     // If there's an error fetching the filters or the filtered data
-    if (errorFilters || errorNewData) (<FetchingFiltersError />)
+    if (errorFilters || errorNewData) (<FetchingFiltersError language={props.language} />)
+    if (props.language === 'Spanish') {
+        return (
+            <PortfolioSPA
+                language={props.language} filters={filters} filtersSelected={filtersSelected}
+                handleDeselectFilter={handleDeselectFilter}
+                handleSelectFilter={handleSelectFilter}
+                data={data} newData={newData} loadingNewData={loadingNewData}
+                noMoreData={noMoreData} showingNoMoreDataModal={showingNoMoreDataModal}
+                handleSeeMoreProjects={handleSeeMoreProjects}
+                handleCloseNoMoreDataModal={handleCloseNoMoreDataModal}
+            />
+        );
+    }
     return (
-        <div className="portfolio_wrapper">
-            <h1>Portfolio</h1>
-            <p>Also, if you want to see all my projects, feel free to visit my <a target="_blank" rel="noreferrer" href="https://github.com/federicotllorente">GitHub</a> and check out the repositories there!</p>
-            <div className="portfolio_wrapper__filters">
-                <h3>Filters</h3>
-                <p>Filter projects by the technologies used</p>
-                <div>
-                    {filters?.map(el => el.selected ? (
-                        <button key={el.id} onClick={e => handleDeselectFilter(el.id)} className="selected">{el.name}</button>
-                    ) : (
-                        <button key={el.id} onClick={e => handleSelectFilter(el.id)}>{el.name}</button>
-                    ))}
-                </div>
-            </div>
-            <div className="project_wrapper">
-                {(filtersSelected?.length == 0) && data.body?.map(el => (<Project key={el._id} data={el} />))}
-                {(filtersSelected?.length >= 1) && newData.body?.map(el => (<Project key={el._id} data={el} />))}
-                {(newData.body?.length == 0 && (filtersSelected?.length >= 1 && !loadingNewData)) && (<NoProjectsError />)}
-            </div>
-            {((!noMoreData && data.body?.length >= 3) ||
-                (data.body?.length !== 0 && data.body?.length % 4 == 0) ||
-                (newData.body?.length !== 0 && newData.body?.length % 4 == 0)) && (
-                    <div className="portfolio__see_more_button" onClick={handleSeeMoreProjects}>See more projects</div>
-                )}
-            {showingNoMoreDataModal && (<NoMoreDataModal handleCloseNoMoreDataModal={handleCloseNoMoreDataModal} />)}
-        </div>
+        <PortfolioENG
+            language={props.language} filters={filters} filtersSelected={filtersSelected}
+            handleDeselectFilter={handleDeselectFilter}
+            handleSelectFilter={handleSelectFilter}
+            data={data} newData={newData} loadingNewData={loadingNewData}
+            noMoreData={noMoreData} showingNoMoreDataModal={showingNoMoreDataModal}
+            handleSeeMoreProjects={handleSeeMoreProjects}
+            handleCloseNoMoreDataModal={handleCloseNoMoreDataModal}
+        />
     );
 };
 
-export default Portfolio;
+const mapStateToProps = state => {
+    return {
+        language: state.language
+    };
+};
+
+export default connect(mapStateToProps, null)(Portfolio);
