@@ -23,7 +23,6 @@ const BurgerMenuSPA = props => (
                 <li><a target="_blank" rel="noreferrer" href="https://github.com/federicotllorente">GitHub</a></li>
                 <li><a target="_blank" rel="noreferrer" href="https://www.instagram.com/federicotllorente/">Instagram</a></li>
                 <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federicotllorente/">LinkedIn</a></li>
-                <li><a target="_blank" rel="noreferrer" href="https://www.behance.net/federicollorente">Behance</a></li>
             </ul>
             <p>Copyright Federico Tejedor Llorente &copy; 2021<br />Todos los derechos reservados</p>
             <BurgerMenuCloseButton handleCloseMenu={props.handleCloseMenu} />

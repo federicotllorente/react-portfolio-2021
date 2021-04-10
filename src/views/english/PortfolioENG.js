@@ -28,8 +28,12 @@ const PortfolioENG = props => {
                 </div>
             </div>
             <div className="project_wrapper">
-                {(filtersSelected?.length == 0) && data.body?.map(el => (<Project key={el._id} data={el} />))}
-                {(filtersSelected?.length >= 1) && newData.body?.map(el => (<Project key={el._id} data={el} />))}
+                {(filtersSelected?.length == 0) && data.body?.map(el => (
+                    <Project key={el._id} data={el} language={language} />
+                ))}
+                {(filtersSelected?.length >= 1) && newData.body?.map(el => (
+                    <Project key={el._id} data={el} language={language} />
+                ))}
                 {(newData.body?.length == 0 && (filtersSelected?.length >= 1 && !loadingNewData)) && (
                     <NoProjectsError language={language} />
                 )}
