@@ -72,6 +72,11 @@
     }
 }
 
+.notAvailable__note p {
+    padding: 0 !important;
+    color: $darkColor !important;
+}
+
 @media (max-width: $breakpointTabletSmall) {
     .project_details {
         h1 {

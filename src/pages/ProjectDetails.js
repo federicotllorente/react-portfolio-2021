@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 
 import useFetchProjData from '../hooks/useFetchProjData';
@@ -17,6 +17,8 @@ const ProjectDetails = props => {
         pag_url,
         fetchData
     } = useFetchProjData();
+    // Show availability note
+    const [showingNote, setShowingNote] = useState(false);
     useEffect(() => {
         fetchData(api_url, pag_url);
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -24,8 +26,10 @@ const ProjectDetails = props => {
     if (loading) return (<div className="loader"></div>);
     // If it's successfully fetched the data
     if (data.body) {
-        if (props.language === 'Spanish') return (<ProjectDetailsSPA data={data} />);
-        return (<ProjectDetailsENG data={data} />);
+        if (props.language === 'Spanish') return (
+            <ProjectDetailsSPA data={data} showingNote={showingNote} setShowingNote={setShowingNote} />
+        );
+        return (<ProjectDetailsENG data={data} showingNote={showingNote} setShowingNote={setShowingNote} />);
     }
     // If the project wasn't found
     return (<NotFound />);

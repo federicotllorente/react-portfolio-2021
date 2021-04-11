@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProjectDetailsSPA = props => {
-    const { data } = props;
+    const { data, showingNote, setShowingNote } = props;
     return (
         <div className="project_details">
             <h1>{data.body[0].name}</h1>
@@ -22,9 +22,27 @@ const ProjectDetailsSPA = props => {
                     </ul>
                     <h3>UX diseñado con</h3>
                     <p>{data.body[0].ux}</p>
-                    <a href={data.body[0].url} target="_blank" rel="noreferrer">Ver proyecto completo</a>
-                    <br />
-                    <a href={data.body[0].gitHub} target="_blank" rel="noreferrer">Ver código en GitHub</a>
+                    {data.body[0].available ? (
+                        <React.Fragment>
+                            <a href={data.body[0].url} target="_blank" rel="noreferrer">Ver proyecto completo</a>
+                            <br />
+                            <a href={data.body[0].gitHub} target="_blank" rel="noreferrer">Ver código en GitHub</a>
+                        </React.Fragment>
+                    ) : (
+                        <div className="notAvailable">
+                            <a href={data.body[0].gitHub} target="_blank" rel="noreferrer">Ver código en GitHub</a>
+                            <br />
+                            <div>
+                                {showingNote && (
+                                    <span className="notAvailable__note"><p><span>Nota: </span> Este proyecto actualmente está en desarrollo, y no se le ha hecho deploy aún. Pero si quieres, puedes ver el código en su repositorio en GitHub (haz click en "Ver código en GitHub")</p></span>
+                                )}
+                                <p
+                                    onMouseOver={e => setShowingNote(true)}
+                                    onMouseLeave={e => setShowingNote(false)}
+                                >¿Dónde puedo ver este proyecto?</p>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div className="project_details__intro__description">
                     <h2>Sobre este proyecto</h2>
