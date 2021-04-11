@@ -1,33 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class Contact extends Component {
-    render() {
-        return (
-            <div className="contact_wrapper">
-                <h1><span>Let’s <strong>work together</strong>!</span> I’d really like to help you</h1>
-                <div className="contact">
-                    <div className="contact__text">
-                        <h2>Contact me</h2>
-                        <p>I always want to help people to solve real business problems, and make strong connections to work together whenever is necessary. I’m open to freelance opportunities, medium or large projects as well.</p>
-                        <p>Feel free to contact me and tell me about your project or company. I would like to hear from you!</p>
-                        <p>You can email me at <a href="mailto:hello@federicotllorente.work">hello@federicotllorente.work</a>, or simply complete the contact form. And id you wish, you can reach me out on my Social media as well:</p>
-                        <ul>
-                            <li>–<a target="_blank" rel="noreferrer" href="https://www.instagram.com/federicotllorente/">Instagram</a></li>
-                            <li>–<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federicotllorente/">LinkedIn</a></li>
-                            <li>–<a target="_blank" rel="noreferrer" href="https://www.behance.net/federicollorente">Behance</a></li>
-                        </ul>
-                        <p>Let’s make something special!</p>
-                    </div>
-                    <div className="contact__form">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <textarea placeholder="Message"></textarea>
-                        <input type="submit" value="SEND" />
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
+import ContactENG from '../views/english/ContactENG';
+import ContactSPA from '../views/spanish/ContactSPA';
 
-export default Contact;
+const Contact = props => {
+    if (props.language === 'Spanish') return (<ContactSPA />);
+    return (<ContactENG />);
+};
+
+const mapStateToProps = state => {
+    return {
+        language: state.language
+    };
+};
+
+export default connect(mapStateToProps, null)(Contact);
