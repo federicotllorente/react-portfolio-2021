@@ -1,4 +1,6 @@
+const path = require('path');
 const express = require('express');
+const multer = require('multer');
 const controllers = require('./controllers');
 const router = express.Router();
 
@@ -18,6 +20,17 @@ const response = {
     }
 };
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, `dist/${process.env.FILES_ROUTE}/`);
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}${path.extname(file.originalname)}`);
+    }
+});
+
+const upload = multer({ storage: storage });
+
 router.get('/projects', (req, res) => {
     const filterTechnology = req.query.technology || ''; // '/projects?technology=ID,ID,ID'
     const filterTechnologyArray = filterTechnology ? filterTechnology.split(',') : '';
@@ -29,8 +42,9 @@ router.get('/projects', (req, res) => {
         .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to get the projects'));
 });
 
-router.post('/projects', (req, res) => {
-    const { pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, images, descriptionENG, descriptionSPA, inDevelopment, available } = req.body;
+router.post('/projects', upload.array('images', 10), (req, res) => {
+    const { pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, descriptionENG, descriptionSPA, inDevelopment, available } = req.body;
+    const images = req.files;
     controllers.addProject(pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, images, descriptionENG, descriptionSPA, inDevelopment, available)
         .then(data => response.success(req, res, data, 201))
         .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a project'));

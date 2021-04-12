@@ -7,9 +7,13 @@ const Project = props => {
     // Limit technologies list items to show
     let technologiesNewArray = [];
     const maxTechsToShow = 4;
-    for (let i = 0; i <= (maxTechsToShow - 1); i++) {
-        const el = props.data.technologies[i];
-        technologiesNewArray.push(el);
+    if (props.data.technologies.length <= 4) {
+        technologiesNewArray = props.data.technologies;
+    } else {
+        for (let i = 0; i < maxTechsToShow; i++) {
+            const el = props.data.technologies[i];
+            technologiesNewArray.push(el);
+        }
     }
     // Show availability note
     const [showingNote, setShowingNote] = useState(false);

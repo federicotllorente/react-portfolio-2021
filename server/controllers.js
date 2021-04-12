@@ -12,24 +12,22 @@ const addProject = (pathname, name, typeENG, typeSPA, year, technologies, ux, ur
             console.error('[projectsController] There is missing data in the request');
             return reject('Invalid data');
         }
-        let setUX = ux ? ux : '';
-        let setURL = url ? url : '';
-        let setAvailability = available ? available : false;
+        const currentHost = process.env.HOST || window.location.origin;
+        let imagesArray = [];
+        images.forEach(image => {
+            const newImage = { url: `${currentHost}/files/${image.filename}` };
+            imagesArray.push(newImage);
+        });
         const newProject = {
-            pathname,
-            name,
-            typeENG,
-            typeSPA,
-            year,
-            technologies, // This is an array of IDs
-            ux: setUX,
-            url: setURL,
-            gitHub,
-            images, // This is an array of objects: { url: 'url' }
-            descriptionENG,
-            descriptionSPA,
-            inDevelopment,
-            available: setAvailability
+            pathname, name, year,
+            typeENG, typeSPA, gitHub,
+            descriptionENG, descriptionSPA,
+            technologies: technologies.split(','), // This is an array of IDs
+            images: imagesArray, // This is an array of objects: { url: 'url' }
+            ux: ux || '',
+            url: url || '',
+            available: available === 'true' ? true : false,
+            inDevelopment: inDevelopment === 'true' ? true : false
         };
         stores.addProject(newProject);
         return resolve(newProject);
