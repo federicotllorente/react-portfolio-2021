@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const multer = require('multer');
@@ -43,11 +44,16 @@ router.get('/projects', (req, res) => {
 });
 
 router.post('/projects', upload.array('images', 10), (req, res) => {
-    const { pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, descriptionENG, descriptionSPA, inDevelopment, available } = req.body;
-    const images = req.files;
-    controllers.addProject(pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, images, descriptionENG, descriptionSPA, inDevelopment, available)
-        .then(data => response.success(req, res, data, 201))
-        .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a project'));
+    if (req.body.password !== process.env.API_PASSWORD) {
+        console.log('Someone not authorized is trying to make a POST HTTP request to the API');
+        res.status(401).send({ error: 'You are not authotized to send this request', body: '' });
+    } else {
+        const { pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, descriptionENG, descriptionSPA, inDevelopment, available } = req.body;
+        const images = req.files;
+        controllers.addProject(pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, images, descriptionENG, descriptionSPA, inDevelopment, available)
+            .then(data => response.success(req, res, data, 201))
+            .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a project'));
+    }
 });
 
 router.get('/technologies', (req, res) => {
@@ -57,9 +63,14 @@ router.get('/technologies', (req, res) => {
 });
 
 router.post('/technologies', (req, res) => {
-    controllers.addTechnology(req.body.name)
-        .then(data => response.success(req, res, data, 201))
-        .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a technology'));
+    if (req.body.password !== process.env.API_PASSWORD) {
+        console.log('Someone not authorized is trying to make a POST HTTP request to the API');
+        res.status(401).send({ error: 'You are not authotized to send this request', body: '' });
+    } else {
+        controllers.addTechnology(req.body.name)
+            .then(data => response.success(req, res, data, 201))
+            .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a technology'));
+    }
 });
 
 module.exports = router;
