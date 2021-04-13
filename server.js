@@ -1,5 +1,6 @@
 require('dotenv').config();
 const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const webpack = require('webpack');
 const helmet = require('helmet');
@@ -7,6 +8,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const router = require('./server/router');
 const connect = require('./server/db');
+
+if (!fs.existsSync(path.join(__dirname, 'dist', process.env.FILES_ROUTE))) {
+    fs.mkdirSync(path.join(__dirname, 'dist', process.env.FILES_ROUTE));
+}
 
 const app = express();
 const port = process.env.PORT || 3000;
