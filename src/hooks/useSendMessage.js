@@ -14,12 +14,11 @@ const useSendMessage = () => {
         if (!name || !email || !message) {
             console.log('There is missing data');
         } else {
-            sendMessage('/contact', { name, email, message })
-                .then(data => console.log(data))
-                .catch(err => console.error(err));
+            sendMessage('/contact', { name, email, message });
             setName('');
             setEmail('');
             setMessage('');
+            alert('Email sent! Thank you so much for your message. I will be replying to you as soon as possible!');
         }
     };
     const sendMessage = async (api_url, data) => {

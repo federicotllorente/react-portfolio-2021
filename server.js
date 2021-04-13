@@ -42,14 +42,17 @@ app.use(bodyParser.json()); // To parse JSON requests
 app.use(bodyParser.urlencoded({ extended: false })); // To parse URL Encoded requests
 app.use('/api', router); // To manage all the API routes (like '/api/projects' or '/api/technologies')
 
+// To manage the files routes in order to be able to see them
 app.get('/files/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', req.originalUrl));
 });
 
+// To serve the statics after Webpack compiles the React App
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+// To manage the contact form and its POST HTTP requests
 app.post('/contact', (req, res) => {
     sendMessage(req.body, res);
 });
