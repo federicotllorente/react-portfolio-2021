@@ -23,22 +23,31 @@ function useFetchData() {
         }
     };
     const fetchNextData = async (api_url, endpoint) => {
+        setLoading(true);
         const final_url = api_url + endpoint;
         const response = await api(final_url);
         try {
             setLoading(false);
-            if (response.length === 0) {
+            if (response.body.length == 0) {
                 setNoMoreData(true);
                 setShowingNoMoreDataModal(true);
-            } else if (response.length < 3) {
+            } else if (response.body.length < 3) {
                 setNoMoreData(true);
                 setCurrentPage(currentPage + 1);
-                const newResponse = [...data, response];
-                setData(newResponse.flat());
+                const allData = [data.body, response.body].flat();
+                const newDataObj = {
+                    error: response.error,
+                    body: allData
+                };
+                setData(newDataObj);
             } else {
                 setCurrentPage(currentPage + 1);
-                const newResponse = [...data, response];
-                setData(newResponse.flat());
+                const allData = [data.body, response.body].flat();
+                const newDataObj = {
+                    error: response.error,
+                    body: allData
+                };
+                setData(newDataObj);
             }
         } catch (err) {
             setLoading(false);

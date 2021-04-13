@@ -39,8 +39,8 @@ const PortfolioENG = props => {
                 )}
             </div>
             {((!noMoreData && data.body?.length >= 3) ||
-                (data.body?.length !== 0 && data.body?.length % 4 == 0) ||
-                (newData.body?.length !== 0 && newData.body?.length % 4 == 0)) && (
+                (!noMoreData && data.body?.length !== 0 && data.body?.length % 4 == 0) ||
+                (!noMoreData && newData.body?.length !== 0 && newData.body?.length % 4 == 0)) && (
                     <div className="portfolio__see_more_button" onClick={handleSeeMoreProjects}>See more projects</div>
                 )}
             {showingNoMoreDataModal && (
