@@ -49,6 +49,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
+app.post('/contact', (req, res) => {
+    console.log(req.body);
+});
+
 app.listen(port, err => {
     if (err) {
         console.error(err);

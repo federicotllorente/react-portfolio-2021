@@ -17,10 +17,10 @@ const ContactENG = props => {
                     <p>Let’s make something special!</p>
                 </div>
                 <div className="contact__form">
-                    <form action="" method="post">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <textarea placeholder="Message"></textarea>
+                    <form onSubmit={e => props.handleSubmit(e)} method="post">
+                        <input type="text" onChange={e => props.handleChange(e, 'name')} value={props.name} placeholder="Name" required />
+                        <input type="email" onChange={e => props.handleChange(e, 'email')} value={props.email} placeholder="Email" required />
+                        <textarea onChange={e => props.handleChange(e, 'message')} value={props.message} placeholder="Message" required></textarea>
                         <input type="submit" value="SEND" />
                     </form>
                 </div>
