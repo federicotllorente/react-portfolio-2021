@@ -59,7 +59,7 @@ const ProjectDetailsSPA = props => {
             <div className="project_details__contact">
                 <hr />
                 <h2>¿Quieres contactarme?</h2>
-                <p>¡Puedes ir a la <Link to="/contact">página de contacto</Link> para ponerte en contacto conmigo!<br />También, si quieres puedes <a href="mailto:hello@federicotllorente.work">enviarme un email</a>.</p>
+                <p>¡Puedes ir a la <Link to="/contact">página de contacto</Link> para ponerte en contacto conmigo!<br />También, si quieres puedes <a href="mailto:federicotllorente@gmail.com">enviarme un email</a>.</p>
             </div>
         </div>
     );

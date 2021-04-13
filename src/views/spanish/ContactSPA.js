@@ -8,7 +8,7 @@ const ContactENG = props => {
                 <div className="contact__text">
                     <h2>Contáctame</h2>
                     <p>Siéntete libre de contactarme y contarme sobre tu proyecto o empresa. ¡Me encantará oír de ti!</p>
-                    <p>Puedes enviarme un email a <a href="mailto:hello@federicotllorente.work">hello@federicotllorente.work</a>, o simplemente completa este formulario. Y si quieres, puedes también contactarme por mis redes sociales:</p>
+                    <p>Puedes enviarme un email a <a href="mailto:federicotllorente@gmail.com">hello@federicotllorente.work</a>, o simplemente completa este formulario. Y si quieres, puedes también contactarme por mis redes sociales:</p>
                     <ul>
                         <li>–<a target="_blank" rel="noreferrer" href="https://github.com/federicotllorente/">GitHub</a></li>
                         <li>–<a target="_blank" rel="noreferrer" href="https://www.instagram.com/federicotllorente/">Instagram</a></li>
@@ -17,10 +17,12 @@ const ContactENG = props => {
                     <p>¡Hagamos algo increíble!</p>
                 </div>
                 <div className="contact__form">
-                    <input type="text" placeholder="Nombre" />
-                    <input type="email" placeholder="Email" />
-                    <textarea placeholder="Mensaje"></textarea>
-                    <input type="submit" value="ENVIAR" />
+                    <form action="" method="post">
+                        <input type="text" placeholder="Nombre" />
+                        <input type="email" placeholder="Email" />
+                        <textarea placeholder="Mensaje"></textarea>
+                        <input type="submit" value="ENVIAR" />
+                    </form>
                 </div>
             </div>
         </div>

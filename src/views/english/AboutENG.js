@@ -17,7 +17,7 @@ const AboutENG = () => (
                         <li>–<a target="_blank" rel="noreferrer" href="https://github.com/federicotllorente/">GitHub</a></li>
                         <li>–<a target="_blank" rel="noreferrer" href="https://www.instagram.com/federicotllorente/">Instagram</a></li>
                         <li>–<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/federicotllorente/">LinkedIn</a></li>
-                        <li>–<a href="mailto:hello@federicotllorente.work">Or simply email me!</a></li>
+                        <li>–<a href="mailto:federicotllorente@gmail.com">Or simply email me!</a></li>
                     </ul>
                 </div>
                 <div className="about__introduction__image">
@@ -32,7 +32,7 @@ const AboutENG = () => (
                 <p>There, my teachers always encouraged me to be an entrepreneur and follow my dreams and goals. So at the middle of 2019 I started an Entrepreneurship and Digital Marketing blog, which then I left because I started to focus much more in coding and programming (my real passion).</p>
                 <p>At the same time of these studies, I started to take online courses about subjects I really like and enjoy: Web Development and UX Design. I’ve always been a self-taught person who’s always searching for new knowledge. I genuinely think people need to stay updated and learn constantly to be able to grow and evolve as a person and as a professional as well.</p>
                 <p>Concluding, I’d like to mention some of my hobbies like videogames, reading, movies, or walking. Yep, in recent times I enjoyed a lot walk in the field and feel the nature. Oh, and fun fact, according to the Myers-Briggs test it seems that my personality type is <a target="_blank" rel="noreferrer" href="http://www.personalitypage.com/INFJ.html">INFJ</a>, if this is something you would like to know.</p>
-                <p>You can download my Resume (CV) here in the PDF I let you down below. I want to remind you that you can always email me at <a href="mailto:hello@federicotllorente.work">hello@federicotllorente.work</a> or message me on my Social Media. Thanks for taking the time to read this. I hope we could work together!</p>
+                <p>You can download my Resume (CV) here in the PDF I let you down below. I want to remind you that you can always email me at <a href="mailto:federicotllorente@gmail.com">federicotllorente@gmail.com</a> or message me on my Social Media. Thanks for taking the time to read this. I hope we could work together!</p>
                 <p><Link to="/">Download Resume (XXXkB PDF)</Link></p>
             </div>
         </div>

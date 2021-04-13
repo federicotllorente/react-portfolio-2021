@@ -59,7 +59,7 @@ const ProjectDetailsENG = props => {
             <div className="project_details__contact">
                 <hr />
                 <h2>Do you want to contact me?</h2>
-                <p>You can go to the <Link to="/contact">contact page</Link> and get in touch with me!<br />Also, if you want you can <a href="mailto:hello@federicotllorente.work">send me an email</a>.</p>
+                <p>You can go to the <Link to="/contact">contact page</Link> and get in touch with me!<br />Also, if you want you can <a href="mailto:federicotllorente@gmail.com">send me an email</a>.</p>
             </div>
         </div>
     );
