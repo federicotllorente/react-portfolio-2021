@@ -8,6 +8,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const router = require('./server/router');
 const connect = require('./server/db');
+const sendMessage = require('./server/nodemailerConfig');
 
 if (!fs.existsSync(path.join(__dirname, 'dist', process.env.FILES_ROUTE))) {
     fs.mkdirSync(path.join(__dirname, 'dist', process.env.FILES_ROUTE));
@@ -50,7 +51,7 @@ app.get('*', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-    console.log(req.body);
+    sendMessage(req.body, res);
 });
 
 app.listen(port, err => {
