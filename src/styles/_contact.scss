@@ -33,50 +33,52 @@
             }
         }
         &__form {
-            display: flex;
-            flex-direction: column;
-            input[type="text"], input[type="email"] {
-                padding: 20px 40px;
-                margin: 0 0 20px;
-                width: 400px;
-                box-sizing: border-box;
-                font-family: $mainFontFamily;
-                color: $lightColor;
-                background-color: transparent;
-                border: 2px solid $lightColor;
-                border-radius: 0;
-                -webkit-appearance: none;
-            }
-            textarea {
-                padding: 20px 40px;
-                margin: 0 0 20px;
-                width: 400px;
-                height: 200px;
-                min-width: 400px;
-                min-height: 200px;
-                max-width: 400px;
-                max-height: 200px;
-                box-sizing: border-box;
-                font-family: $mainFontFamily;
-                color: $lightColor;
-                background-color: transparent;
-                border: 2px solid $lightColor;
-                border-radius: 0;
-                -webkit-appearance: none;
-            }
-            input[type="submit"] {
-                padding: 20px 40px;
-                width: fit-content;
-                font-family: $mainFontFamily;
-                color: $altDarkColor;
-                background-color: $lightColor;
-                border: none;
-                border-radius: 0;
-                transition: 0.2s;
-                -webkit-appearance: none;
-                &:hover {
-                    background-color: $altLightColor;
-                    cursor: pointer;
+            form {
+                display: flex;
+                flex-direction: column;
+                input[type="text"], input[type="email"] {
+                    padding: 20px 40px;
+                    margin: 0 0 20px;
+                    width: 400px;
+                    box-sizing: border-box;
+                    font-family: $mainFontFamily;
+                    color: $lightColor;
+                    background-color: transparent;
+                    border: 2px solid $lightColor;
+                    border-radius: 0;
+                    -webkit-appearance: none;
+                }
+                textarea {
+                    padding: 20px 40px;
+                    margin: 0 0 20px;
+                    width: 400px;
+                    height: 200px;
+                    min-width: 400px;
+                    min-height: 200px;
+                    max-width: 400px;
+                    max-height: 200px;
+                    box-sizing: border-box;
+                    font-family: $mainFontFamily;
+                    color: $lightColor;
+                    background-color: transparent;
+                    border: 2px solid $lightColor;
+                    border-radius: 0;
+                    -webkit-appearance: none;
+                }
+                input[type="submit"] {
+                    padding: 20px 40px;
+                    width: fit-content;
+                    font-family: $mainFontFamily;
+                    color: $altDarkColor;
+                    background-color: $lightColor;
+                    border: none;
+                    border-radius: 0;
+                    transition: 0.2s;
+                    -webkit-appearance: none;
+                    &:hover {
+                        background-color: $altLightColor;
+                        cursor: pointer;
+                    }
                 }
             }
         }
