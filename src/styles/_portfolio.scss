@@ -103,6 +103,7 @@
 
 .notAvailable {
     > div > p {
+        font-family: $secondaryFontFamily;
         &:hover {
             cursor: help;
         }
