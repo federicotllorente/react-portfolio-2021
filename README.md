@@ -12,7 +12,7 @@ If you want, you can clone this repository and create your own portfolio based o
 
 ## Where can I see it deployed?
 
-Well, my own portfolio is available in [www.federicotllorente.work](www.federicotllorente.work). If you want, you can visit it and see what I do. If you want to contact me, you can send me an email to [federicotllorente@gmail.com](mailto:federicotllorente@gmail.com) or contact me with the [contact form in my portfolio website](www.federicotllorente.work/contact)!
+Well, my own portfolio is available in [http://www.federicotllorente.work](http://www.federicotllorente.work). If you want, you can visit it and see what I do. If you want to contact me, you can send me an email to [federicotllorente@gmail.com](mailto:federicotllorente@gmail.com) or contact me with the [contact form in my portfolio website](http://www.federicotllorente.work/contact)!
 
 ## Starting with this project
 
@@ -34,7 +34,7 @@ Si deseas, puedes clonar este repositorio y crear tu propio portfolio basándote
 
 ## ¿Dónde puedo ver la App desplegada?
 
-Bueno, mi propio portfolio está disponible en [www.federicotllorente.work](www.federicotllorente.work). Si quieres, puedes visitarlo y ver lo que hago. Si quieres contactarme, puedes enviarme un email a [federicotllorente@gmail.com](mailto:federicotllorente@gmail.com) o bien ponerte en contaco conmigo por el [formulario de contacto que hay en el sitio web de mi portfolio](www.federicotllorente.work/contact).
+Bueno, mi propio portfolio está disponible en [http://www.federicotllorente.work](http://www.federicotllorente.work). Si quieres, puedes visitarlo y ver lo que hago. Si quieres contactarme, puedes enviarme un email a [federicotllorente@gmail.com](mailto:federicotllorente@gmail.com) o bien ponerte en contaco conmigo por el [formulario de contacto que hay en el sitio web de mi portfolio](http://www.federicotllorente.work/contact).
 
 ## Comenzando con este proyecto
 
