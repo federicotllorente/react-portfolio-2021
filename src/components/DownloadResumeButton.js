@@ -19,10 +19,17 @@ const DownloadResumeButton = props => {
             setButtonInnerHTML(buttonText.withoutLineBreak);
         }
     }, [windowWidth]);
+    if (props.language === 'Spanish') {
+        return (
+            <a className="download_resume_btn" target="_blank" rel="noreferrer" href="https://www.dropbox.com/s/9799f9x32960ath/Federico%20Tejedor%20Llorente%20%E2%80%93%20CV%20%28Espa%C3%B1ol%29.pdf?dl=0" id="download_resume_btn">
+                {buttonInnerHTML}
+            </a>
+        );
+    }
     return (
-        <Link className="download_resume_btn" to="/" id="download_resume_btn">
+        <a className="download_resume_btn" target="_blank" rel="noreferrer" href="https://www.dropbox.com/s/vbixdcz1mv38bou/Federico%20Tejedor%20Llorente%20%E2%80%93%20Resume%3ACV%20%28English%29.pdf?dl=0" id="download_resume_btn">
             {buttonInnerHTML}
-        </Link>
+        </a>
     );
 };
 

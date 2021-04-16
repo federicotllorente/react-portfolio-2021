@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import bioPhoto from '../../img/bio_photo.png';
 
@@ -33,7 +32,7 @@ const AboutSPA = () => (
                 <p>Al mismo tiempo que estudiaba, comencé a tomar cursos online sobre las materias que más me interesan: desarrollo web y diseño UX. Desde siempre fui una persona autodidacta que siempre está buscando nuevos conocimientos. Pienso que las personas necesitamos estar en constante aprendizaje y desarrollo para ser capaces de crecer y evolucionar tanto como profesional como persona como tal.</p>
                 <p>Concluyendo un poco, me gustaría mencionar algunos de mis hobbies como los videojuegos, las películas, leer o caminar. Y sí, en estos últimos tiempos he estado disfrutando mucho de salir a caminar al aire libre y disfrutar el paisaje. Oh, y un dato curioso, de acuerdo al test Myers-Briggs parece ser que mi tipo de personalidad es la <a target="_blank" rel="noreferrer" href="http://www.personalitypage.com/INFJ.html">INFJ</a>, si esto es algo que te interesa saber.</p>
                 <p>Puedes descargar mi CV con el PDF que te dejo aquí debajo. Te quiero recordar que puedes enviarme un email a <a href="mailto:federicotllorente@gmail.com">federicotllorente@gmail.com</a> o bien un mensaje por mis redes sociales. Gracias por tomarte el tiempo de leer esto. ¡Me encantaría trabajar juntos!</p>
-                <p><Link to="/">Descargar currículum (XXXkB PDF)</Link></p>
+                <p><a target="_blank" rel="noreferrer" href="https://www.dropbox.com/s/9799f9x32960ath/Federico%20Tejedor%20Llorente%20%E2%80%93%20CV%20%28Espa%C3%B1ol%29.pdf?dl=0">Descargar Currículum (43,45 kB PDF, descarga vía Dropbox)</a></p>
             </div>
         </div>
     </div>
