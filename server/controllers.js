@@ -14,7 +14,7 @@ const addProject = (pathname, name, typeENG, typeSPA, year, technologies, ux, ur
         }
         let imagesArray = [];
         images.forEach(image => {
-            const newImage = { url: image.filename };
+            const newImage = { url: `${window.location.origin}/files/${image.filename}` };
             imagesArray.push(newImage);
         });
         const newProject = {

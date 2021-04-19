@@ -52,7 +52,7 @@ const ProjectDetailsENG = props => {
             <div className="project_details__photos">
                 {data.body[0].images.map(el => {
                     return (
-                        <img key={el._id} src={`${window.location.origin}/files/${el.url}`} alt={`${data.body[0].name} ${el._id}`} />
+                        <img key={el._id} src={el.url} alt={`${data.body[0].name} ${el._id}`} />
                     )
                 })}
             </div>
