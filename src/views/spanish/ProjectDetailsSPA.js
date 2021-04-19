@@ -7,7 +7,7 @@ const ProjectDetailsSPA = props => {
         <div className="project_details">
             <h1>{data.body[0].name}</h1>
             <div className="project_details__main_image">
-                <img src={data.body[0].images[0].url} alt={data.body[0].name} />
+                <img src={`${window.location.origin}/files/${data.body[0].images[0].url}`} alt={data.body[0].name} />
             </div>
             <div className="project_details__intro">
                 <div className="project_details__intro__tech">
@@ -52,7 +52,7 @@ const ProjectDetailsSPA = props => {
             <div className="project_details__photos">
                 {data.body[0].images.map(el => {
                     return (
-                        <img key={el._id} src={el.url} alt={`${data.body[0].name} ${el._id}`} />
+                        <img key={el._id} src={`${window.location.origin}/files/${el.url}`} alt={`${data.body[0].name} ${el._id}`} />
                     )
                 })}
             </div>

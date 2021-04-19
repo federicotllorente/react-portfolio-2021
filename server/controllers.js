@@ -12,10 +12,9 @@ const addProject = (pathname, name, typeENG, typeSPA, year, technologies, ux, ur
             console.error('[projectsController] There is missing data in the request');
             return reject('Invalid data');
         }
-        const currentHost = process.env.HOST || window.location.origin;
         let imagesArray = [];
         images.forEach(image => {
-            const newImage = { url: `${currentHost}/files/${image.filename}` };
+            const newImage = { url: image.filename };
             imagesArray.push(newImage);
         });
         const newProject = {

@@ -7,7 +7,7 @@ const ProjectSPA = props => {
         <div className="project" key={props.data._id}>
             <div className="project__image">
                 <Link to={`portfolio/${props.data.pathname}`}>
-                    <img src={props.data.images[0].url} alt="Project Thumbnail" />
+                    <img src={`${window.location.origin}/files/${props.data.images[0].url}`} alt="Project Thumbnail" />
                 </Link>
             </div>
             <div className="project__content">
