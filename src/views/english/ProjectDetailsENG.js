@@ -7,7 +7,7 @@ const ProjectDetailsENG = props => {
         <div className="project_details">
             <h1>{data.body[0].name}</h1>
             <div className="project_details__main_image">
-                <img src={`${window.location.origin}/files/${data.body[0].images[0].url}`} alt={data.body[0].name} />
+                <img src={data.body[0].images[0].url} alt={data.body[0].name} />
             </div>
             <div className="project_details__intro">
                 <div className="project_details__intro__tech">
