@@ -35,10 +35,10 @@
     "webpack-cli": "^4.6.0"
   },
   "scripts": {
-    "start": "node ./index.js",
-    "start:dev": "nodemon ./index.js",
-    "build": "webpack-cli --config ./webpack.config.js",
-    "test": "jest"
+    "start": "NODE_ENV=production node ./index.js",
+    "start:dev": "NODE_ENV=development nodemon ./index.js",
+    "build": "NODE_ENV=production webpack-cli --config ./webpack.config.js",
+    "test": "NODE_ENV=test jest --verbose"
   },
   "eslintConfig": {
     "extends": [
