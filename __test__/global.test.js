@@ -1,22 +1,8 @@
-const mongoose = require('mongoose');
-const supertest = require('supertest');
-const { app, server } = require('../server');
-const { User } = require('../server/models');
-
-const api = supertest(app); // For testing the API and its endpoints
-
-const initialUser = {
-    username: 'federicotllorente',
-    password: '12345',
-    admin: true
-};
+// require('dotenv').config();
+const { api, initialUser, resetUsers, closeConnections } = require('./helpers');
 
 describe('API Tests', () => {
-    beforeEach(async () => {
-        await User.deleteMany({}); // Delete all the users in the DB
-        const newUser = new User(initialUser);
-        await newUser.save(); // Save the 'initial user' in the DB
-    });
+    beforeEach(() => resetUsers());
 
     test('Exists the new user', async () => {
         const results = await api.get('/api/users');
@@ -32,8 +18,12 @@ describe('API Tests', () => {
             .expect('Content-Type', /application\/json/);
     });
 
-    afterAll(() => {
-        mongoose.connection.close(); // Close database connection
-        server.close(); // Close server
+    test('Project without content is not added', async () => {
+        await api
+            .post('/api/projects')
+            .expect(401) // It needs an 'API password' (later it'll be replaced with an admin user session)
+            .expect('Content-Type', /application\/json/);
     });
+
+    afterAll(() => closeConnections());
 });
