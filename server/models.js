@@ -52,12 +52,12 @@ const usersSchema = new Schema({
     }
 });
 
-const Projects = mongoose.model('projects', projectsSchema);
-const Technologies = mongoose.model('technologies', technologiesSchema);
-const Users = mongoose.model('users', usersSchema);
+const Project = mongoose.model('projects', projectsSchema);
+const Technology = mongoose.model('technologies', technologiesSchema);
+const User = mongoose.model('users', usersSchema);
 
 module.exports = {
-    Projects,
-    Technologies,
-    Users
+    Project,
+    Technology,
+    User
 };

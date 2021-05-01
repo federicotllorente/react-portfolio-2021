@@ -59,10 +59,6 @@ app.post('/contact', (req, res) => {
     sendMessage(req.body, res);
 });
 
-app.listen(port, err => {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log(`Server running on port ${port}`);
-    }
-});
+const server = app.listen(port, () => console.log(`Server running on port ${port}`));
+
+module.exports = { app, server };

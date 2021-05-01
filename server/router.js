@@ -65,11 +65,15 @@ router.delete('/technologies', (req, res) => {
 });
 
 router.get('/users', (req, res) => {
-    res.status(200).send('These are the users');
+    controllers.getUsers()
+        .then(data => response.success(req, res, data, 200))
+        .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to get the users'));
 });
 
 router.post('/users', (req, res) => {
-    res.status(201).send('Creating a new user');
+    controllers.addUser(req.body.username, req.body.password, req.body.admin || false)
+        .then(data => response.success(req, res, data, 201))
+        .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a user'));
 });
 
 module.exports = router;
