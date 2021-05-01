@@ -37,10 +37,27 @@ const technologiesSchema = new Schema({
     }
 });
 
+const usersSchema = new Schema({
+    username: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    admin: {
+        type: Boolean,
+        required: true
+    }
+});
+
 const Projects = mongoose.model('projects', projectsSchema);
 const Technologies = mongoose.model('technologies', technologiesSchema);
+const Users = mongoose.model('users', usersSchema);
 
 module.exports = {
     Projects,
-    Technologies
+    Technologies,
+    Users
 };

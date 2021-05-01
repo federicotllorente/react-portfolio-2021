@@ -1,6 +1,7 @@
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
+const response = require('./handleErrors');
 const OAuth2 = google.auth.OAuth2;
 
 const createTransporter = async () => {
@@ -40,11 +41,9 @@ const sendMessage = async (message, res) => {
     let emailTransporter = await createTransporter();
     emailTransporter.sendMail(mailOptions, (error, data) => {
         if (error) {
-            console.error(error);
-            res.status(500).send(`[nodemailerConfig] Something went wrong: ${error}`);
+            response.error(null, res, error, 500, `[nodemailerConfig] Something went wrong: ${error}`);
         } else {
-            console.log(data);
-            res.status(201).send(`[nodemailerConfig] Email sent: ${data.response}`);
+            response.success(null, res, data, 201, `[nodemailerConfig] Email sent: ${data.response}`);
         }
     });
 };
