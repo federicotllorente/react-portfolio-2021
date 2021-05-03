@@ -1,4 +1,4 @@
-const stores = require('../stores');
+const stores = require('../stores/projects');
 
 const getProjects = (filterTechnologies, filterPathname, page, limit) => {
     return new Promise((resolve, reject) => {

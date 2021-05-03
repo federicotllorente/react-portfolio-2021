@@ -1,4 +1,4 @@
-const stores = require('../stores');
+const stores = require('../stores/technologies');
 
 const getTechnologies = () => {
     return new Promise((resolve, reject) => {

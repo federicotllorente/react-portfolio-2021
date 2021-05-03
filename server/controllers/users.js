@@ -1,4 +1,4 @@
-const stores = require('../stores');
+const stores = require('../stores/users');
 
 const getUsers = () => {
     return new Promise((resolve, reject) => {
@@ -7,14 +7,19 @@ const getUsers = () => {
 };
 
 const addUser = (username, password, admin) => {
+    const encryptPassword = password => {
+        const passwordHash = password;
+        return passwordHash;
+    };
     return new Promise((resolve, reject) => {
-        if (!user) {
+        if (!username || !password || !admin) {
             console.error('[usersController] There is missing data in the request');
             return reject('Invalid data');
         }
-        const newUser = { username, password, admin }
+        const encyptedPassword = encryptPassword(password);
+        const newUser = { username, passwordHash: encyptedPassword, admin };
         stores.addUser(newUser);
-        return resolve(newUser);
+        return resolve({ username, admin }); // Do not return the password
     });
 };
 
