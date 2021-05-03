@@ -1,11 +1,13 @@
-// require('dotenv').config();
 const { api, initialUser, resetUsers, closeConnections } = require('./helpers');
 
 describe('API Tests', () => {
     beforeEach(() => resetUsers());
 
-    test('Exists the new user', async () => {
-        const results = await api.get('/api/users');
+    test('New user exists', async () => {
+        const results = await api
+            .get('/api/users')
+            .expect(200)
+            .expect('Content-Type', /application\/json/);
         expect(results.body.body).toHaveLength(1);
         expect(results.body.body[0].username).toBe(initialUser.username);
         expect(results.body.body[0].admin).toBe(initialUser.admin);

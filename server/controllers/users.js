@@ -1,4 +1,5 @@
 const stores = require('../stores/users');
+const encryptPassword = require('../encryptPassword');
 
 const getUsers = () => {
     return new Promise((resolve, reject) => {
@@ -7,17 +8,13 @@ const getUsers = () => {
 };
 
 const addUser = (username, password, admin) => {
-    const encryptPassword = password => {
-        const passwordHash = password;
-        return passwordHash;
-    };
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         if (!username || !password || !admin) {
             console.error('[usersController] There is missing data in the request');
             return reject('Invalid data');
         }
-        const encyptedPassword = encryptPassword(password);
-        const newUser = { username, passwordHash: encyptedPassword, admin };
+        const passwordHash = await encryptPassword(password);
+        const newUser = { username, passwordHash, admin };
         stores.addUser(newUser);
         return resolve({ username, admin }); // Do not return the password
     });
