@@ -1,6 +1,4 @@
-// Deprecated
-
-const { Project, Technology, User } = require('./models');
+const { Project } = require('../models');
 
 const getProjects = (filterTechnologies, filterPathname, page, limit) => {
     return new Promise((resolve, reject) => {
@@ -22,31 +20,7 @@ const addProject = project => {
     myProject.save();
 };
 
-const getTechnologies = async () => {
-    const technologies = await Technology.find();
-    return technologies;
-};
-
-const addTechnology = technology => {
-    const myTechnology = new Technology(technology);
-    myTechnology.save();
-};
-
-const getUsers = async () => {
-    const users = await User.find();
-    return users;
-};
-
-const addUser = user => {
-    const myUser = new User(user);
-    myUser.save();
-};
-
 module.exports = {
     getProjects,
-    addProject,
-    getTechnologies,
-    addTechnology,
-    getUsers,
-    addUser
+    addProject
 };
