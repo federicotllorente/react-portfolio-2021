@@ -2,24 +2,9 @@ require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const multer = require('multer');
+const response = require('./handleErrors');
 const controllers = require('./controllers');
 const router = express.Router();
-
-const response = {
-    success: (req, res, data, status) => {
-        res.status(status || 200).send({
-            error: '',
-            body: data
-        });
-    },
-    error: (req, res, error, status, message) => {
-        console.error(message);
-        res.status(status || 500).send({
-            error: error,
-            body: ''
-        });
-    }
-};
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -45,8 +30,7 @@ router.get('/projects', (req, res) => {
 
 router.post('/projects', upload.array('images', 10), (req, res) => {
     if (req.body.password !== process.env.API_PASSWORD) {
-        console.log('Someone not authorized is trying to make a POST HTTP request to the API');
-        res.status(401).send({ error: 'You are not authotized to send this request', body: '' });
+        response.error(req, res, 'You are not authotized to send this request', 401, 'Someone not authorized is trying to make a POST HTTP request to the API');
     } else {
         const { pathname, name, typeENG, typeSPA, year, technologies, ux, url, gitHub, descriptionENG, descriptionSPA, inDevelopment, available } = req.body;
         const images = req.files;
@@ -54,6 +38,10 @@ router.post('/projects', upload.array('images', 10), (req, res) => {
             .then(data => response.success(req, res, data, 201))
             .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a project'));
     }
+});
+
+router.delete('/projects', (req, res) => {
+    res.status(200).send('Removing a project');
 });
 
 router.get('/technologies', (req, res) => {
@@ -64,13 +52,30 @@ router.get('/technologies', (req, res) => {
 
 router.post('/technologies', (req, res) => {
     if (req.body.password !== process.env.API_PASSWORD) {
-        console.log('Someone not authorized is trying to make a POST HTTP request to the API');
-        res.status(401).send({ error: 'You are not authotized to send this request', body: '' });
+        response.error(req, res, 'You are not authotized to send this request', 401, 'Someone not authorized is trying to make a POST HTTP request to the API');
     } else {
         controllers.addTechnology(req.body.name)
             .then(data => response.success(req, res, data, 201))
             .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a technology'));
     }
+});
+
+router.delete('/technologies', (req, res) => {
+    res.status(200).send('Removing a technology');
+});
+
+router.get('/users', (req, res) => {
+    res.status(401).send('You do not have the required permissions');
+    // controllers.getUsers()
+    //     .then(data => response.success(req, res, data, 200))
+    //     .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to get the users'));
+});
+
+router.post('/users', (req, res) => {
+    res.status(401).send('You do not have the required permissions');
+    // controllers.addUser(req.body.username, req.body.password, req.body.admin || false)
+    //     .then(data => response.success(req, res, data, 201))
+    //     .catch(error => response.error(req, res, error, 500, '[router] Error in controller trying to add a user'));
 });
 
 module.exports = router;

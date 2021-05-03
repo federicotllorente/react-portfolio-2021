@@ -1,4 +1,4 @@
-const models = require('./models');
+const { Project, Technology, User } = require('./models');
 
 const getProjects = (filterTechnologies, filterPathname, page, limit) => {
     return new Promise((resolve, reject) => {
@@ -7,7 +7,7 @@ const getProjects = (filterTechnologies, filterPathname, page, limit) => {
         if (filterTechnologies.length >= 1) filter.technologies = { '$in': filterTechnologies };
         const pageRequested = parseInt(page, 10) || 0;
         const limitRequested = parseInt(limit, 10) || 25;
-        return resolve(models.Projects.find(filter)
+        return resolve(Project.find(filter)
             .skip(limitRequested * pageRequested)
             .limit(limitRequested)
             .populate('technologies')
@@ -16,23 +16,35 @@ const getProjects = (filterTechnologies, filterPathname, page, limit) => {
 };
 
 const addProject = project => {
-    const myProject = new models.Projects(project);
+    const myProject = new Project(project);
     myProject.save();
 };
 
 const getTechnologies = async () => {
-    const technologies = await models.Technologies.find();
+    const technologies = await Technology.find();
     return technologies;
 };
 
 const addTechnology = technology => {
-    const myTechnology = new models.Technologies(technology);
+    const myTechnology = new Technology(technology);
     myTechnology.save();
+};
+
+const getUsers = async () => {
+    const users = await User.find();
+    return users;
+};
+
+const addUser = user => {
+    const myUser = new User(user);
+    myUser.save();
 };
 
 module.exports = {
     getProjects,
     addProject,
     getTechnologies,
-    addTechnology
+    addTechnology,
+    getUsers,
+    addUser
 };
