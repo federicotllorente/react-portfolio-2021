@@ -1,8 +1,16 @@
 const { User } = require('../models');
 
-const getUsers = async () => {
-    const users = await User.find();
+const getUsers = async username => {
+    const users = username
+        ? await User.find({ username })
+        : await User.find();
     return users;
+};
+
+const checkUserExistency = async username => {
+    const search = await User.find({ username });
+    const result = search ? true : false;
+    return result;
 };
 
 const addUser = user => {
@@ -12,5 +20,6 @@ const addUser = user => {
 
 module.exports = {
     getUsers,
+    checkUserExistency,
     addUser
 };

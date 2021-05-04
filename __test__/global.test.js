@@ -13,6 +13,17 @@ describe('API Tests', () => {
         expect(results.body.body[0].admin).toBe(initialUser.admin);
     });
 
+    test('Username already taken when a new user is added', async () => {
+        const resultsBefore = await api.get('/api/users');
+        await api
+            .post('/api/users')
+            .send(initialUser)
+            .expect(400)
+            .expect('Content-Type', /application\/json/);
+        const resultsAfter = await api.get('/api/users');
+        expect(resultsAfter.body.body).toHaveLength(resultsBefore.body.body.length);
+    });
+
     test('Projects returned as JSON', async () => {
         await api
             .get('/api/projects')
