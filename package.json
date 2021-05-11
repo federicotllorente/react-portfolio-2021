@@ -41,6 +41,9 @@
     "dev": "NODE_ENV=development nodemon ./index.js",
     "build": "NODE_ENV=production webpack-cli --config ./webpack.config.js",
     "test": "NODE_ENV=test PORT=3001 jest --verbose --silent",
+    "test:global": "NODE_ENV=test PORT=3001 jest __test__/global.test.js --verbose --silent",
+    "test:users": "NODE_ENV=test PORT=3001 jest __test__/users.test.js --verbose --silent",
+    "test:login": "NODE_ENV=test PORT=3001 jest __test__/login.test.js --verbose --silent",
     "test:watch": "npm run test -- --watch",
     "test:DOH": "npm run test -- --detectOpenHandles"
   },
