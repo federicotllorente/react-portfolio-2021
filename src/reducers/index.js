@@ -20,6 +20,10 @@ const reducer = (state, action) => {
                 ...state,
                 showingMenu: false
             };
+        // case 'SIGN_IN':
+        //     return { };
+        // case 'SIGN_OUT':
+        //     return { };
         default:
             return state;
     }

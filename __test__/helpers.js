@@ -3,7 +3,7 @@ const supertest = require('supertest');
 const mongoose = require('mongoose');
 const { app, server } = require('../server');
 const { User } = require('../server/models');
-const encryptPassword = require('../server/encryptPassword');
+const { encryptPassword } = require('../server/handlePasswords');
 
 const api = supertest(app); // For testing the API and its endpoints
 

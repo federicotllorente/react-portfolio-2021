@@ -21,3 +21,15 @@ export const closeMenu = () => {
         type: 'CLOSE_MENU'
     };
 };
+
+// export const signIn = () => {
+//     return {
+//         type: 'SIGN_IN'
+//     };
+// };
+
+// export const signOut = () => {
+//     return {
+//         type: 'SIGN_OUT'
+//     };
+// };
