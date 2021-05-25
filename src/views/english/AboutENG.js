@@ -1,6 +1,6 @@
 import React from 'react';
 
-import bioPhoto from '../../img/bio_photo.png';
+import bioPhoto from '../../img/new_bio_photo.png';
 
 const AboutENG = () => (
     <div className="about_wrapper">
@@ -20,7 +20,7 @@ const AboutENG = () => (
                     </ul>
                 </div>
                 <div className="about__introduction__image">
-                    <img src={bioPhoto} alt="Federico Tejedor Llorente" />
+                    <img src={bioPhoto} width="450" alt="Federico Tejedor Llorente" />
                 </div>
             </div>
             <div className="about__content">

@@ -40,6 +40,7 @@ const uri = process.env.NODE_ENV === 'test' || 'development'
 connect(uri); // Connect to the database
 
 app.use(cors()); // To enable all CORS requests
+app.disable('etag');
 app.use(bodyParser.json()); // To parse JSON requests
 app.use(bodyParser.urlencoded({ extended: false })); // To parse URL Encoded requests
 app.use('/api', router); // To manage all the API routes (like '/api/projects' or '/api/technologies')
